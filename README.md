@@ -2,6 +2,18 @@
 
 # Tasks
 
+## 📚 Table of Contents
+
+1. [Task 1: Binary Representations and Bitwise Operations](#task-1-binary-representations-and-bitwise-operations)
+    - [Overview](#overview)
+    - [Functions Implemented](#functions-implemented)
+    - [Goals and Thought Process](#goals-and-thought-process)
+    - [Example Usage](#example-usage)
+    - [Challenges and Solutions](#challenges-and-solutions)
+    - [References](#references)
+
+---
+
 ## 🔍 Task 1: Binary Representations and Bitwise Operations
 
 #### **Overview**
@@ -12,7 +24,7 @@ The goal was to create functions that simulate operations commonly seen in crypt
 ---
 
 
-### 🔗 Summary of References
+### References
 
 | **Function** | **Reference** | **Why It Was Used** |
 |--------------|---------------|----------------------|
