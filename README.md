@@ -2,8 +2,15 @@
 
 # Tasks
 
-## Task 1
-### Binary Representations
+## 🔍 Task 1: Binary Representations and Bitwise Operations
+
+#### **Overview**
+In Task 1, I implemented four key functions to manipulate bits in a 32-bit unsigned integer. Bitwise operations are powerful tools often used in fields like cryptography, data compression, and algorithm optimization. While they can be tricky at first, mastering them provides a deeper understanding of how computers handle binary data.
+
+The goal was to create functions that simulate operations commonly seen in cryptographic algorithms like SHA-256—rotating bits, making conditional choices, and computing majority values at the bit level.
+
+---
+
 
 ### 🔗 Summary of References
 
