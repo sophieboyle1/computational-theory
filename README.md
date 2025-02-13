@@ -4,20 +4,6 @@
 
 This repository contains solutions for the **Computational Theory** assessment. The goal of this project is to implement and analyze various computational functions, including bitwise operations, hash functions, and cryptographic techniques.
 
-## Project Structure
-
-The repository is organized as follows:
-
-- `tasks.ipynb`: Jupyter notebook containing solutions for all tasks and tests.
-- `README.md`: This README file with an overview, research, and instructions.
-- `.gitignore`: Specifies files and directories to ignore in Git.
-- `requirements.txt`: Lists dependencies required to run the project.
-
-
-# Tasks
-
-## 📚 Table of Contents
-
 ## 📚 **Table of Contents**
 1. [Project Structure](#project-structure)  
 2. [Usage Instructions](#usage-instructions)  
@@ -34,6 +20,39 @@ The repository is organized as follows:
 
 ---
 
+## **Project Structure**
+
+The repository is organized as follows:
+
+- `tasks.ipynb`: Jupyter notebook containing solutions for all tasks and tests.
+- `README.md`: This README file with an overview, research, and instructions.
+- `.gitignore`: Specifies files and directories to ignore in Git.
+- `requirements.txt`: Lists dependencies required to run the project.
+
+## **Usage Instructions**
+To run the code and tests, follow these steps:
+
+### Clone the repository
+   ```sh
+   git clone <https://github.com/sophieboyle1/computational-theory>
+   ```
+
+### Navigate to the repository directory
+   ```sh
+   cd <https://github.com/sophieboyle1/computational-theory>
+   ```
+
+### Open the Jupyter notebook
+   ```sh
+   jupyter notebook tasks.ipynb
+   ```
+- This will launch the notebook where you can run individual cells.
+
+### Run the notebook cells
+- Execute the solutions directly within the Jupyter Notebook.
+
+---
+
 ## Task 1: Binary Representations 🔍
 
 ### **Overview**
@@ -42,7 +61,6 @@ In Task 1, I implemented four key functions to manipulate bits in a 32-bit unsig
 The goal was to create functions that simulate operations commonly seen in cryptographic algorithms like SHA-256—rotating bits, making conditional choices, and computing majority values at the bit level.
 
 ---
-
 
 ### **Research and Insights**  
 
