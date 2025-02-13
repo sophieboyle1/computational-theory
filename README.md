@@ -11,6 +11,7 @@ This repository contains solutions for the **Computational Theory** assessment. 
    - [Overview](#overview)  
    - [Research and Insights](#research-and-insights)  
    - [Functions Implemented](#functions-implemented)  
+   - [Testing](#testing)
    - [References](#references)  
 4. [Task 2: Hash Functions](#task-2-hash-functions)  
    - [Overview](#overview)  
@@ -120,6 +121,20 @@ Bitwise operations go far beyond cryptographic security and play a major role in
 
 ---
 
+### **Testing**
+All functions have been **fully tested** in the **Jupyter Notebook (`tasks.ipynb`)** using Python’s built-in **unittest** module.  
+
+### Test Coverage
+- ✅ **Standard cases** – Checking expected outputs for bitwise rotations (`rotl`, `rotr`), conditional selection (`ch`), and majority logic (`maj`).
+- ✅ **Edge cases** – Rotations by **0** and **32 positions**, alternating bit patterns, and large values.
+- ✅ **Error handling** – Ensuring negative values and out-of-range numbers are handled correctly.
+- ✅ **Bitwise correctness** – Verified results using **manual bitwise calculations**.
+
+### Running the Tests
+- All tests are included in **`tasks.ipynb`** – simply run all cells.
+- No external setup is required.  
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
 
 ### **References**
 
