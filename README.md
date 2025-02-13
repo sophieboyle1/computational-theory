@@ -4,6 +4,16 @@
 
 This repository contains solutions for the **Computational Theory** assessment. The goal of this project is to implement and analyze various computational functions, including bitwise operations, hash functions, and cryptographic techniques.
 
+## Project Structure
+
+The repository is organized as follows:
+
+- `tasks.ipynb`: Jupyter notebook containing solutions for all tasks and tests.
+- `README.md`: This README file with an overview, research, and instructions.
+- `.gitignore`: Specifies files and directories to ignore in Git.
+- `requirements.txt`: Lists dependencies required to run the project.
+
+
 # Tasks
 
 ## 📚 Table of Contents
