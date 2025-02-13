@@ -1,5 +1,8 @@
 # Computational Theory Assessment
 ## Sophie Boyle - G00410444
+## Introduction
+
+This repository contains solutions for the **Computational Theory** assessment. The goal of this project is to implement and analyze various computational functions, including bitwise operations, hash functions, and cryptographic techniques.
 
 # Tasks
 
@@ -102,7 +105,8 @@ Bitwise operations go far beyond cryptographic security and play a major role in
 
 
 ## Task 2: Hash Functions 🔍
-### Hash Functions
+
+### **Overview**
 
 ## Task 3
 ### SHA256
