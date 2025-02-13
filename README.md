@@ -18,16 +18,19 @@ The repository is organized as follows:
 
 ## 📚 Table of Contents
 
-1. [Task 1: Binary Representations](#task-1-binary-representations)
-    - [Overview](#overview)
-    - [Research](#research-and-insights)
-    - [Functions Implemented](#functions-implemented)
-    - [References](#references)
-2. [Task 2: Hash Functions](#task-2-hash-functions)
-    - [Overview](#overview)
-    - [Functions Implemented](#functions-implemented)
-    - [Example Usage](#example-usage)
-    - [References](#references)
+## 📚 **Table of Contents**
+1. [Project Structure](#project-structure)  
+2. [Usage Instructions](#usage-instructions)  
+3. [Task 1: Binary Representations](#task-1-binary-representations)  
+   - [Overview](#overview)  
+   - [Research and Insights](#research-and-insights)  
+   - [Functions Implemented](#functions-implemented)  
+   - [References](#references)  
+4. [Task 2: Hash Functions](#task-2-hash-functions)  
+   - [Overview](#overview)  
+   - [Functions Implemented](#functions-implemented)  
+   - [Example Usage](#example-usage)  
+   - [References](#references)  
 
 ---
 
