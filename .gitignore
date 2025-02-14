@@ -1,0 +1,41 @@
+# Ignore Python Bytecode & Cache Files
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+
+# Ignore Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Ignore Virtual Environments
+venv/
+env/
+*.venv
+*.env
+
+# Ignore Package Management Files
+Pipfile
+Pipfile.lock
+poetry.lock
+*.egg-info/
+
+# Ignore Logs & System Files
+logs/
+*.log
+*.DS_Store
+*.vscode/
+*.idea/
+
+# Ignore Test Results & Coverage Reports
+.coverage
+htmlcov/
+*.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Ignore Large Temporary Files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+*.bak
