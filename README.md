@@ -335,9 +335,20 @@ The padding implementation was thoroughly tested to ensure correctness and adher
 
 ---
 
+### References
 
-## Task 4
-### Prime Numbers
+| **Function**              | **Reference**                                                                                  | **Why It Was Used**                                                        |
+|----------------------------|-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| `read_file`               | [Python Docs - File Input and Output](https://docs.python.org/3/tutorial/inputoutput.html)     | To understand how to read binary data from a file in Python.              |
+| `compute_original_bit_length` | [Python Docs - len() function](https://docs.python.org/3/library/functions.html#len)       | To calculate the length of the data in bytes.                             |
+| `append_one_bit`          | [NIST - SHA-256 Specification](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)     | To follow the exact steps for padding a message according to SHA-256.     |
+| `add_zero_padding`        | [NIST - SHA-256 Specification](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)     | To ensure that the message length is correct before hashing.              |
+| `append_original_length`  | [Python Docs - int.to_bytes()](https://docs.python.org/3/library/stdtypes.html#int.to_bytes)   | To convert an integer into a 64-bit big-endian format for SHA-256 padding.|
+| `extract_padding`         | [Python Docs - String Formatting](https://docs.python.org/3/library/string.html#format-specification-mini-language) | To format the padding bytes as a readable hexadecimal string.            |
+
+---
+
+## Task 4 - Prime Numbers
 
 ## Task 5
 ### Roots
