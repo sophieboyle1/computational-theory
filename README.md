@@ -225,6 +225,19 @@ Hashing ensures **efficient storage and retrieval** by minimizing **collisions**
 
 *(For a more detailed breakdown of test cases, see the notebook.)*
 
+---
+
+### **References**
+
+| **Function** | **Reference** | **Why It Was Used** |
+|--------------|---------------|----------------------|
+| `hash_function` | [Oracle Docs - Effective Java (Item 11: HashCode)](https://docs.oracle.com/en/java/) | To understand why prime numbers like 31 are commonly used in hashing. |
+|              | [Python Docs - Hashing](https://docs.python.org/3/library/hashlib.html) | To understand Python’s built-in hashing functions and techniques. |
+|              | [MIT OpenCourseWare - Hash Functions](https://openlearninglibrary.mit.edu/) | To explore the theoretical background of hash functions and their applications. |
+|              | [Princeton - Hashing Functions](https://algs4.cs.princeton.edu/34hash/) | To understand uniform distribution and how prime moduli improve hash distribution. |
+|              | [Python Docs - Modulo Operator](https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations) | To understand how Python’s modulo operation ensures hash values remain within range. |
+
+
 
 ## Task 3
 ### SHA256
