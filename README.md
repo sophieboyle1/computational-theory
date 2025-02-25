@@ -208,8 +208,23 @@ Hashing ensures **efficient storage and retrieval** by minimizing **collisions**
 - [Python Docs - Hash Functions](https://docs.python.org/3/library/hashlib.html) 
 - [Lecture 4: Hashing from MIT's Introduction to Algorithms course](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/)
 
+---
+
+### **Testing** 
+
+- ✅ **Basic Cases** – Ensures that hashing common words like `"hello"`, `"world"`, and `"python"` produces expected values.  
+- ✅ **Edge Cases** – Tests include hashing an **empty string**, **single-character strings**, and **long strings** to check function stability.  
+- ✅ **Collision Handling** – Verifies that different words (e.g., `"apple"` and `"orange"`) do not produce the same hash value, reducing the likelihood of collisions.  
+- ✅ **Consistency Check** – Runs the hash function multiple times on the same input to ensure it consistently produces the same output.  
 
 ---
+
+### **Running the Tests**  
+- All tests are included in **`tasks.ipynb`** – simply run all cells.  
+- No external setup is required.  
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
+
 
 ## Task 3
 ### SHA256
