@@ -4,20 +4,20 @@
 
 This repository contains solutions for the **Computational Theory** assessment. The goal of this project is to implement and analyze various computational functions, including bitwise operations, hash functions, and cryptographic techniques.
 
-## 📚 **Table of Contents**
+## 📚 **Table of Contents**  
 1. [Project Structure](#project-structure)  
 2. [Usage Instructions](#usage-instructions)  
 3. [Task 1: Binary Representations](#task-1-binary-representations)  
-   - [Overview](#overview)  
-   - [Research and Insights](#research-and-insights)  
-   - [Functions Implemented](#functions-implemented)  
-   - [Testing](#testing)
-   - [References](#references)  
 4. [Task 2: Hash Functions](#task-2-hash-functions)  
-   - [Overview](#overview)  
-   - [Functions Implemented](#functions-implemented)  
-   - [Functions Implemented](#functions-implemented)
-   - [References](#references)  
+5. [Task 3: Cryptographic Functions](#task-3-cryptographic-functions)  
+6. [References](#references)  
+
+**Each task is structured as follows:**  
+- **Overview**  
+- **Research and Insights**  
+- **Functions Implemented**  
+- **Testing**  
+- **References**  
 
 ---
 
@@ -54,7 +54,7 @@ To run the code and tests, follow these steps:
 
 ---
 
-## Task 1: Binary Representations 🔍
+## Task 1: Binary Representations
 
 ### **Overview**
 In Task 1, I implemented four key functions to manipulate bits in a 32-bit unsigned integer. Bitwise operations are powerful tools often used in fields like cryptography, data compression, and algorithm optimization. While they can be tricky at first, mastering them provides a deeper understanding of how computers handle binary data.
@@ -150,7 +150,7 @@ All functions have been **fully tested** in the **Jupyter Notebook (`tasks.ipynb
 |              | [Python Docs - Bitwise AND/OR](https://docs.python.org/3/library/stdtypes.html#bitwise-and) | To understand bitwise AND/OR operations in Python. |
 
 
-## Task 2: Hash Functions 🔍
+## Task 2: Hash Functions
 
 ### **Overview**
 
