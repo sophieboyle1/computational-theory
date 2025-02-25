@@ -262,6 +262,31 @@ Padding is required to maintain the security properties of SHA-256. It ensures t
 
 The method follows the exact structure described in the NIST SHA-2 specification, ensuring compliance with cryptographic standards.
 
+---
+
+### Research and Insights 🔬
+
+SHA-256 is part of the SHA-2 family of cryptographic hash functions and is widely used for securing data, verifying integrity, and digital signatures. Before the hashing process, messages need to be **padded** to fit into 512-bit blocks.  
+
+Padding is crucial because SHA-256 processes data in fixed-size blocks. If a message is shorter than a full block, padding ensures that the structure is maintained without ambiguity. This follows the Merkle–Damgård construction, which allows for secure hash functions to operate on variable-length inputs.  
+
+#### Why is Padding Necessary?
+1. **Ensures Message Length is a Multiple of 512 Bits**  
+   - The SHA-256 compression function processes data in **512-bit chunks**.  
+   - If a message is too short, it needs to be extended while preserving uniqueness.  
+
+2. **Prevents Collision & Length Extension Attacks**  
+   - Without proper padding, attackers could manipulate hashes by appending additional data.  
+   - Adding a length field at the end makes it difficult to extend an existing hash.  
+
+3. **Follows the SHA-2 Specification**  
+   - Padding must conform to the exact structure outlined in **FIPS PUB 180-4**.  
+   - This ensures **compatibility** with cryptographic implementations.  
+
+📖 **Further Reading:** 
+- [NIST FIPS PUB 180-4 – Secure Hash Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)
+- [Cryptographic Hashing and Padding Explained](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)
+- [SHA-256 Padding – A Technical Breakdown](https://en.wikipedia.org/wiki/SHA-2#Padding)
 
 
 ## Task 4
