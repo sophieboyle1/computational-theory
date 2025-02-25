@@ -288,6 +288,53 @@ Padding is crucial because SHA-256 processes data in fixed-size blocks. If a mes
 - [Cryptographic Hashing and Padding Explained](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)
 - [SHA-256 Padding – A Technical Breakdown](https://en.wikipedia.org/wiki/SHA-2#Padding)
 
+---
+
+### Functions Implemented
+
+To correctly apply SHA-256 padding, several functions were implemented, each handling a specific step of the process.
+
+1. **Reading the file contents**  
+   The function reads the input file as raw bytes to ensure all data is processed correctly.
+
+2. **Computing the original bit length**  
+   The function calculates the length of the input in bits, which is later appended to the message as part of the padding process.
+
+3. **Appending the 1 bit**  
+   SHA-256 requires the input to end with a single 1 bit (0x80 in hex) to clearly mark the message boundary.
+
+4. **Adding zero padding**  
+   After the 1 bit is added, zeros are appended to align the message to 448 bits modulo 512.
+
+5. **Appending the original message length**  
+   The final step is appending the original message length as a 64-bit big-endian integer to the end of the padded message.
+
+6. **Extracting the padding**  
+   This function isolates and extracts only the padding bytes, converting them into a human-readable hexadecimal format.
+
+Each function ensures compliance with the NIST SHA-2 specification, allowing the input to be securely processed by the SHA-256 hash function.
+
+---
+
+### Testing
+
+The padding implementation was thoroughly tested to ensure correctness and adherence to the SHA-256 specification. The following test cases were used:
+
+- ✅ **Reading file contents**: Ensured that the file was read accurately as raw bytes.
+- ✅ **Computing bit length**: Confirmed that the original length in bits matched expectations for various input sizes.
+- ✅ **Appending the 1 bit**: Verified that a single 1 bit (0x80 in hex) was appended correctly.
+- ✅ **Zero padding length**: Checked that the padding brought the total length to 448 bits mod 512.
+- ✅ **Appending original length**: Confirmed that the final padded message included the original bit length in the correct format.
+- ✅ **Extracting padding**: Ensured that the extracted padding matched the expected hex representation.
+
+### **Running the Tests**  
+- All tests are included in **`tasks.ipynb`** – simply run all cells.  
+- No external setup is required.  
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
+
+---
+
 
 ## Task 4
 ### Prime Numbers
