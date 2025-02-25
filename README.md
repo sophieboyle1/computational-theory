@@ -244,10 +244,25 @@ Hashing ensures **efficient storage and retrieval** by minimizing **collisions**
 |              | [Princeton - Hashing Functions](https://algs4.cs.princeton.edu/34hash/) | To understand uniform distribution and how prime moduli improve hash distribution. |
 |              | [Python Docs - Modulo Operator](https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations) | To understand how Python’s modulo operation ensures hash values remain within range. |
 
+---
+
+## Task 3 - SHA256
+
+### Overview
+
+SHA-256 is a widely used cryptographic hash function that provides data integrity and security. A key step in the hashing process is message padding, which ensures that the input data conforms to the SHA-256 block size of 512 bits before being processed.
+
+The padding process follows a structured format:
+
+- Append a single 1 bit (0x80 in hex) to the message.
+- Add zero bits until the message length is 64 bits short of a multiple of 512.
+- Append the original message length as a 64-bit big-endian integer.
+
+Padding is required to maintain the security properties of SHA-256. It ensures that messages fit neatly into 512-bit blocks, preventing ambiguities and vulnerabilities. Without this step, the hash function would not be able to process inputs of varying lengths securely.
+
+The method follows the exact structure described in the NIST SHA-2 specification, ensuring compliance with cryptographic standards.
 
 
-## Task 3
-### SHA256
 
 ## Task 4
 ### Prime Numbers
