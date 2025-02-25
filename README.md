@@ -7,10 +7,17 @@ This repository contains solutions for the **Computational Theory** assessment. 
 ## 📚 **Table of Contents**  
 1. [Project Structure](#project-structure)  
 2. [Usage Instructions](#usage-instructions)  
-3. [Task 1: Binary Representations](#task-1-binary-representations)  
-4. [Task 2: Hash Functions](#task-2-hash-functions)  
-5. [Task 3: Cryptographic Functions](#task-3-cryptographic-functions)  
-6. [References](#references)  
+3. [Tasks Overview](#tasks-overview)  
+4. [Task 1: Binary Representations](#task-1-binary-representations)  
+5. [Task 2: Hash Functions](#task-2-hash-functions)  
+6. [Task 3: Cryptographic Functions](#task-3-cryptographic-functions)  
+7. [Task 4: Prime Numbers](#task-4-prime-numbers)  
+8. [Task 5: Roots](#task-5-roots)  
+9. [Task 6: Proof of Work](#task-6-proof-of-work)  
+10. [Task 7: Turing Machines](#task-7-turing-machines)  
+11. [Task 8: Computational Complexity](#task-8-computational-complexity)  
+12. [References](#references)  
+13. [Conclusion](#conclusion)  
 
 **Each task is structured as follows:**  
 - **Overview**  
