@@ -16,7 +16,7 @@ This repository contains solutions for the **Computational Theory** assessment. 
 4. [Task 2: Hash Functions](#task-2-hash-functions)  
    - [Overview](#overview)  
    - [Functions Implemented](#functions-implemented)  
-   - [Example Usage](#example-usage)  
+   - [Functions Implemented](#functions-implemented)
    - [References](#references)  
 
 ---
@@ -153,6 +153,30 @@ All functions have been **fully tested** in the **Jupyter Notebook (`tasks.ipynb
 ## Task 2: Hash Functions 🔍
 
 ### **Overview**
+
+This task explores **hash functions**, which are essential for cryptography, data integrity, and efficient data structures like hash tables.  
+
+The main objectives of this task are:  
+
+- Convert a given C hash function into Python while maintaining efficiency and correctness.  
+- Test the Python implementation with various inputs to ensure deterministic hashing.  
+- Analyze why 31 and 101 were chosen in the function.  
+
+### What is a Hash Function?  
+A hash function takes an input (e.g., a string) and converts it into a fixed-size integer. An ideal hash function should be:  
+
+- Efficient → Quickly compute a **unique hash** for an input.  
+- Deterministic → The same input **always produces** the same hash value.  
+- Uniform → Hash values should be **well-distributed** to minimize collisions.  
+
+### Why is Hashing Important?  
+Hashing plays a crucial role in various applications, including:  
+
+- Cryptography → Hashing secures passwords, digital signatures, and cryptographic protocols.  
+- Data Integrity → Hash functions verify that data has not been altered (e.g., file checksums).  
+- Efficient Lookups → Hash tables provide fast access to stored data (used in Python dictionaries).  
+
+---
 
 ## Task 3
 ### SHA256
