@@ -22,7 +22,8 @@ This repository contains solutions for the **Computational Theory** assessment. 
 **Each task is structured as follows:**  
 - **Overview**  
 - **Research and Insights**  
-- **Functions Implemented**  
+- **Functions Implemented**
+- **Comparison of Work**
 - **Testing**  
 - **References**  
 
@@ -125,6 +126,27 @@ Bitwise operations go far beyond cryptographic security and play a major role in
    Determines the majority bit at each position among `x`, `y`, and `z`.  
    - If at least two of the inputs have `1`s at a given position, the output will have a `1`.
    - Example: `maj(0b1010, 0b1111, 0b0000)` → `0b1010`.
+
+---
+
+### Comparison of Work
+
+Bitwise operations are crucial in cryptographic applications, especially in hashing functions like SHA-256. This table compares the implemented methods with alternative approaches and references similar work.
+
+| **Approach**                   | **Description** | **Use in Cryptography** | **Limitations** |
+|--------------------------------|----------------|--------------------------|-----------------|
+| **Implemented: ROTL & ROTR (Bitwise Rotations)** | Circularly shifts bits left or right without losing data. | Used in SHA-256 and other cryptographic algorithms to ensure bit diffusion and security. | Slightly slower than direct shifts but ensures all bits are preserved. |
+| **Implemented: CH (Choice Function)** | Selects bits from y where x has 1s, otherwise selects from z. | Ensures non-linearity in SHA-256, making outputs unpredictable. | Computationally heavier than simple bitwise AND/OR. |
+| **Implemented: MAJ (Majority Function)** | Returns the majority bit from three inputs. | Used in SHA-256 to introduce randomness and improve hashing security. | Requires more bitwise operations than a direct comparison. |
+| **Alternative: Bitwise Shift (<<, >>)** | Directly shifts bits left or right. | Faster for simple manipulations but not secure for cryptographic use. | Discards bits instead of rotating, leading to data loss. |
+| **Alternative: Lookup Tables for Rotation** | Precomputed rotations stored in memory. | Optimized for hardware-based cryptographic applications. | Uses extra memory, making it impractical for constrained environments. |
+| **Alternative: XOR-Based Manipulations** | Some CH/MAJ functions can be rewritten using XOR operations. | Can be optimized for specific architectures. | More instructions needed, increasing computational overhead. |
+
+### References to Similar Work 
+- **OpenSSL SHA-256 Implementation** – Uses bitwise operations for efficient cryptographic hashing.  
+  [🔗 Link](https://github.com/openssl/openssl/blob/master/crypto/sha/sha256.c)  
+- **Java Cryptography API (JCA)** – Implements similar bitwise logic in secure hashing functions.  
+  [🔗 Link](https://docs.oracle.com/javase/8/docs/technotes/guides/security/crypto/CryptoSpec.html)  
 
 ---
 
