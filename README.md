@@ -350,6 +350,29 @@ The padding implementation was thoroughly tested to ensure correctness and adher
 
 ## Task 4 - Prime Numbers
 
+### Overview
+Prime numbers play a fundamental role in number theory and cryptography. They are the building blocks of all integers, as described in the **Fundamental Theorem of Arithmetic**, which states that every integer greater than 1 can be uniquely represented as a product of prime numbers.
+
+This task involves calculating the first **100 prime numbers** using two well-established and efficient algorithms:
+
+1. **Trial Division Algorithm** – A simple but computationally expensive method for checking the primality of a number.
+2. **Sieve of Eratosthenes** – An optimized algorithm for efficiently generating prime numbers in bulk.
+
+Each algorithm has different use cases:
+- **Trial Division** is useful when checking the primality of individual numbers, especially in cryptographic applications.
+- **Sieve of Eratosthenes** is highly efficient for generating large lists of primes, making it a preferred choice for number theory and computational applications.
+
+### Implementation Goals
+✔️ Implement two algorithms for prime number generation.  
+✔️ Optimize computations where possible (e.g., skipping even numbers, reducing unnecessary checks).  
+✔️ Compare and analyze the efficiency of both approaches.  
+
+### Justification for Selection
+These two algorithms are widely used in computational mathematics and cryptography:
+- The **Trial Division** method is a fundamental approach that is often used in cryptographic key validation.
+- The **Sieve of Eratosthenes** is an essential technique for quickly generating prime numbers, which are crucial in applications such as **RSA encryption** and **hashing functions**.
+
+
 ## Task 5
 ### Roots
 
