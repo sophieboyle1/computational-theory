@@ -446,7 +446,7 @@ Common tests include:
 Finding prime numbers efficiently is a major challenge in computational mathematics.  
 Two well-known approaches are **Trial Division** and the **Sieve of Eratosthenes**.
 
-#### 1**Trial Division Algorithm**
+#### 1.**Trial Division Algorithm**
 The **Trial Division method** determines if a number **n** is prime by checking divisibility from **2 up to** \( \sqrt{n} \).
 
 ##### **Steps:**
@@ -467,7 +467,7 @@ The **Trial Division method** determines if a number **n** is prime by checking 
 #### **Sieve of Eratosthenes**
 The **Sieve of Eratosthenes** is an efficient way to find all prime numbers up to a given limit **N**.
 
-##### **Steps:**
+#### **Steps:**
 1. Create a boolean list of **N + 1** elements, all initially **True**.
 2. Mark **multiples of each prime** as **False** (starting from 2).
 3. Continue marking until reaching \( \sqrt{N} \).
@@ -483,7 +483,7 @@ The **Sieve of Eratosthenes** is an efficient way to find all prime numbers up t
 
 ---
 
-### 📌 Comparing the Two Algorithms
+### Comparing the Two Algorithms
 
 | **Feature**            | **Trial Division**        | **Sieve of Eratosthenes**  |
 |------------------------|-------------------------|---------------------------|
@@ -496,8 +496,8 @@ The **Sieve of Eratosthenes** is an efficient way to find all prime numbers up t
 ---
 
 ### **Which One Should You Use?**
-- **Use Trial Division** when verifying if **one** number is prime (e.g., cryptography).
-- **Use Sieve of Eratosthenes** when **generating many primes efficiently**.
+- **Use Trial Division** when verifying if one number is prime (e.g., cryptography).
+- **Use Sieve of Eratosthenes** when generating many primes efficiently.
 
 ---
 
@@ -507,6 +507,45 @@ The **Sieve of Eratosthenes** is an efficient way to find all prime numbers up t
 - [🔗 Efficient Prime Finding (MIT OpenCourseWare)](https://ocw.mit.edu)
 
 ---
+
+## Functions Implemented
+
+### How It Works
+The **Trial Division Algorithm** is a straightforward approach to checking if a number is prime:
+1. If \( n \leq 1 \), return **False** (since 1 is not prime).
+2. Check divisibility by **2**:
+   - If \( n \) is even and greater than 2, return **False**.
+3. Check odd divisors from **3** to \( \sqrt{n} \):
+   - If \( n \) is divisible by any number in this range, return **False**.
+4. If no divisors are found, return **True** (the number is prime).
+
+### Optimizations
+- **Even number elimination** – After checking 2, only odd numbers are tested.
+- **Square root limit** – Reduces unnecessary checks by only testing up to \( \sqrt{n} \).
+- **Early exit condition** – As soon as a divisor is found, the function stops execution.
+
+### Use Cases
+- **Cryptographic Key Validation** – Checking if a given number is prime.
+- **Mathematical Computations** – Used in number theory for factorization problems.
+
+### Example Usage
+```python
+is_prime_trial(29)  # Returns True (29 is prime)
+is_prime_trial(30)  # Returns False (30 is not prime)
+```
+
+### Performance
+
+| **Input Size \( n \)**  | **Time Complexity** |
+|----------------------|----------------|
+| Small values (e.g., 2-100)  | \( O(\sqrt{n}) \) – Fast |
+| Large values (e.g., cryptographic primes)  | \( O(\sqrt{n}) \) – Inefficient |
+
+The **Trial Division Algorithm** is effective for checking individual primes but not efficient for generating large lists of primes. To solve this, we use the Sieve of Eratosthenes, covered in the next section.
+
+
+
+
 
 ## Task 5
 ### Roots
