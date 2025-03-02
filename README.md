@@ -543,9 +543,57 @@ is_prime_trial(30)  # Returns False (30 is not prime)
 
 The **Trial Division Algorithm** is effective for checking individual primes but not efficient for generating large lists of primes. To solve this, we use the Sieve of Eratosthenes, covered in the next section.
 
+## Sieve of Eratosthenes
 
+The **Sieve of Eratosthenes** is a highly efficient algorithm used to find **all prime numbers up to a given limit**. It eliminates non-prime numbers by iteratively marking the multiples of each prime starting from **2**.
 
+### Key Functions
 
+- **`sieve_of_eratosthenes(limit)`** – Generates a list of prime numbers **up to** a given limit.
+- **`first_n_primes_sieve(n)`** – Extracts the **first `n` prime numbers** from the computed sieve.
+
+---
+
+### `sieve_of_eratosthenes(limit)`
+
+This function initializes a **boolean list** where each index represents a number. Initially, all numbers are assumed to be **prime** (`True`), except for **0 and 1**, which are set to `False`. 
+
+The algorithm:
+1. Iterates from **2** to \( \sqrt{n} \).
+2. If the current number is **still prime**, it marks all its multiples as **non-prime**.
+3. The remaining numbers marked as `True` are the **prime numbers**.
+
+**Optimized to run in \( O(n \log \log n) \) time complexity**, making it significantly faster than **Trial Division**.
+
+---
+
+### `first_n_primes_sieve(n)`
+
+This function extracts **the first `n` prime numbers** from the sieve.
+
+It:
+1. Calls `sieve_of_eratosthenes(limit)` with a sufficiently large limit.
+2. Extracts indices of all numbers that remain **marked as prime**.
+3. Returns **only the first `n` primes**.
+
+**Efficient for generating large prime sets in bulk.**
+
+---
+
+### Performance Comparison
+
+| Feature                | Sieve of Eratosthenes |
+|------------------------|----------------------|
+| **Best Use Case**      | Generating large sets of primes |
+| **Time Complexity**    | \( O(n \log \log n) \) |
+| **Space Complexity**   | \( O(n) \) |
+| **Speed**              | Very fast for large \( n \) |
+| **Use in Cryptography**| Bulk prime number generation |
+
+---
+
+### Summary
+The **Sieve of Eratosthenes** is an essential algorithm in computational mathematics and cryptography. It significantly outperforms Trial Division for generating multiple primes but requires more memory due to its array-based implementation.
 
 ## Task 5
 ### Roots
