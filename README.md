@@ -595,6 +595,68 @@ It:
 ### Summary
 The **Sieve of Eratosthenes** is an essential algorithm in computational mathematics and cryptography. It significantly outperforms Trial Division for generating multiple primes but requires more memory due to its array-based implementation.
 
+## Comparison of Work
+
+The **Trial Division** and **Sieve of Eratosthenes** algorithms serve different purposes in prime number computation. The table below compares their efficiency, best use cases, and trade-offs.
+
+---
+
+### Algorithm Comparison
+
+| Feature                 | Trial Division               | Sieve of Eratosthenes       |
+|-------------------------|----------------------------|----------------------------|
+| **Best Use Case**       | Checking if a single number is prime | Finding multiple prime numbers efficiently |
+| **Time Complexity**     | \( O(n) \) per number       | \( O(n \log \log n) \)       |
+| **Space Complexity**    | \( O(1) \) (minimal memory usage) | \( O(n) \) (stores prime markers) |
+| **Speed**               | Slow for large \( n \)      | Very fast for large \( n \) |
+| **Use in Cryptography** | Key validation, primality tests | Bulk prime generation for cryptographic applications |
+| **Scalability**         | Poor for large numbers      | Scales efficiently with larger inputs |
+| **Implementation Complexity** | Simple, easy to implement | Requires memory allocation but highly optimized |
+
+---
+
+**Final Verdict:**  
+For large-scale applications, **Sieve of Eratosthenes** is far superior in performance, whereas **Trial Division** remains useful for single-number primality tests.
+
+---
+
+## Testing
+
+To validate the correctness and efficiency of both **Trial Division** and **Sieve of Eratosthenes**, a comprehensive set of test cases was executed. These tests ensure accuracy, efficiency, and robustness under various conditions.
+
+---
+
+### Test Coverage
+
+| **Category**             | **Description**                                              | **Result**  |
+|-------------------------|--------------------------------------------------------------|------------|
+| **Basic Prime Checks**  | Verified prime detection for small known primes (e.g., 2, 3, 5, 7, 11)  | ✅ Passed  |
+| **Edge Cases**          | Tested limits like \( n = 1 \), even numbers, and prime boundaries | ✅ Passed  |
+| **Efficiency Testing**  | Measured execution time for generating the first **100** primes  | ✅ Passed  |
+| **Large Input Handling** | Ensured algorithms work efficiently for numbers up to **10⁶** | ✅ Passed  |
+| **Consistency Check**   | Repeated runs produce identical results, confirming determinism | ✅ Passed  |
+
+---
+
+### Key Observations
+
+- **Trial Division** was accurate but slow for large numbers.
+- **Sieve of Eratosthenes** was significantly faster for generating large prime lists.
+- Both algorithms correctly identified all primes, confirming their correctness.
+- Performance tests showed that the Sieve scales better as \( n \) increases.
+
+**Conclusion:**  
+While both methods are correct, the **Sieve of Eratosthenes** is far more efficient when computing large prime sets.
+
+---
+
+### Running the Tests
+
+All tests are included in `tasks.ipynb`.  
+To run them, simply **execute all cells** in the Jupyter Notebook.
+
+
+
 ## Task 5
 ### Roots
 
