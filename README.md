@@ -648,12 +648,26 @@ To validate the correctness and efficiency of both **Trial Division** and **Siev
 **Conclusion:**  
 While both methods are correct, the **Sieve of Eratosthenes** is far more efficient when computing large prime sets.
 
----
-
 ### Running the Tests
 
 All tests are included in `tasks.ipynb`.  
 To run them, simply **execute all cells** in the Jupyter Notebook.
+
+---
+
+## References
+
+To ensure correctness, efficiency, and best practices, the following references were used in the implementation and analysis of prime number generation.
+
+| **Concept / Function**            | **Reference**                                    | **Why It Was Used** |
+|-----------------------------------|------------------------------------------------|----------------------|
+| **Trial Division Algorithm**      | MIT OpenCourseWare - Number Theory            | To understand basic prime checking methods. |
+| **Mathematical Primality Tests**  | Princeton - Algorithm Design Manual           | To compare different prime-checking techniques. |
+| **Sieve of Eratosthenes**         | Harvard Computational Number Theory Research  | To implement an optimized prime generation method. |
+| **Cryptographic Prime Numbers**   | NIST - Cryptographic Standards                | To understand prime number use in encryption. |
+| **Efficiency Analysis**           | Stanford Algorithms - Complexity Analysis     | To compare time complexity of different approaches. |
+
+---
 
 
 
