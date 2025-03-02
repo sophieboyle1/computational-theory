@@ -154,10 +154,15 @@ Bitwise operations are crucial in cryptographic applications, especially in hash
 All functions have been **fully tested** in the **Jupyter Notebook (`tasks.ipynb`)** using Python’s built-in **unittest** module.  
 
 ### Test Coverage
-- ✅ **Standard cases** – Checking expected outputs for bitwise rotations (`rotl`, `rotr`), conditional selection (`ch`), and majority logic (`maj`).
-- ✅ **Edge cases** – Rotations by **0** and **32 positions**, alternating bit patterns, and large values.
-- ✅ **Error handling** – Ensuring negative values and out-of-range numbers are handled correctly.
-- ✅ **Bitwise correctness** – Verified results using **manual bitwise calculations**.
+
+| **Category**            | **Description** | **Result** |
+|-------------------------|----------------|-----------|
+| ✅ **Standard cases**    | Checking expected outputs for bitwise rotations (`rotl`, `rotr`), conditional selection (`ch`), and majority logic (`maj`). | ✅ Passed |
+| ✅ **Edge cases**        | Rotations by **0** and **32 positions**, alternating bit patterns, and large values. | ✅ Passed |
+| ✅ **Error handling**    | Ensuring negative values and out-of-range numbers are handled correctly. | ✅ Passed |
+| ✅ **Bitwise correctness** | Verified results using **manual bitwise calculations**. | ✅ Passed |
+
+
 
 ### Running the Tests
 - All tests are included in **`tasks.ipynb`** – simply run all cells.
@@ -239,12 +244,15 @@ Hashing ensures **efficient storage and retrieval** by minimizing **collisions**
 
 ---
 
-### **Testing** 
+### Testing
 
-- ✅ **Basic Cases** – Ensures that hashing common words like `"hello"`, `"world"`, and `"python"` produces expected values.  
-- ✅ **Edge Cases** – Tests include hashing an **empty string**, **single-character strings**, and **long strings** to check function stability.  
-- ✅ **Collision Handling** – Verifies that different words (e.g., `"apple"` and `"orange"`) do not produce the same hash value, reducing the likelihood of collisions.  
-- ✅ **Consistency Check** – Runs the hash function multiple times on the same input to ensure it consistently produces the same output.  
+| **Category**              | **Description** | **Result** |
+|---------------------------|----------------|-----------|
+| ✅ **Basic Cases**        | Ensures that hashing common words like `"hello"`, `"world"`, and `"python"` produces expected values. | ✅ Passed |
+| ✅ **Edge Cases**         | Tests include hashing an **empty string**, **single-character strings**, and **long strings** to check function stability. | ✅ Passed |
+| ✅ **Collision Handling** | Verifies that different words (e.g., `"apple"` and `"orange"`) do not produce the same hash value, reducing the likelihood of collisions. | ✅ Passed |
+| ✅ **Consistency Check**  | Runs the hash function multiple times on the same input to ensure it consistently produces the same output. | ✅ Passed |
+
 
 ---
 
@@ -342,12 +350,16 @@ Each function ensures compliance with the NIST SHA-2 specification, allowing the
 
 The padding implementation was thoroughly tested to ensure correctness and adherence to the SHA-256 specification. The following test cases were used:
 
-- ✅ **Reading file contents**: Ensured that the file was read accurately as raw bytes.
-- ✅ **Computing bit length**: Confirmed that the original length in bits matched expectations for various input sizes.
-- ✅ **Appending the 1 bit**: Verified that a single 1 bit (0x80 in hex) was appended correctly.
-- ✅ **Zero padding length**: Checked that the padding brought the total length to 448 bits mod 512.
-- ✅ **Appending original length**: Confirmed that the final padded message included the original bit length in the correct format.
-- ✅ **Extracting padding**: Ensured that the extracted padding matched the expected hex representation.
+
+| **Category**               | **Description** | **Result** |
+|----------------------------|----------------|-----------|
+| ✅ **Reading file contents** | Ensured that the file was read accurately as raw bytes. | ✅ Passed |
+| ✅ **Computing bit length**  | Confirmed that the original length in bits matched expectations for various input sizes. | ✅ Passed |
+| ✅ **Appending the 1 bit**   | Verified that a single 1 bit (0x80 in hex) was appended correctly. | ✅ Passed |
+| ✅ **Zero padding length**   | Checked that the padding brought the total length to 448 bits mod 512. | ✅ Passed |
+| ✅ **Appending original length** | Confirmed that the final padded message included the original bit length in the correct format. | ✅ Passed |
+| ✅ **Extracting padding**    | Ensured that the extracted padding matched the expected hex representation. | ✅ Passed |
+
 
 ### **Running the Tests**  
 - All tests are included in **`tasks.ipynb`** – simply run all cells.  
