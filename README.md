@@ -406,6 +406,107 @@ These two algorithms are widely used in computational mathematics and cryptograp
 - The **Trial Division** method is a fundamental approach that is often used in cryptographic key validation.
 - The **Sieve of Eratosthenes** is an essential technique for quickly generating prime numbers, which are crucial in applications such as **RSA encryption** and **hashing functions**.
 
+## Research and Insights
+
+Prime numbers play a fundamental role in mathematics, particularly in **number theory, cryptography, and computer science**. Their unique properties make them essential for secure communications, data encryption, and computational algorithms.
+
+---
+
+### Why Are Prime Numbers Important?
+Prime numbers are the **building blocks** of integers, as stated in the **Fundamental Theorem of Arithmetic**:
+
+> *Every integer greater than 1 can be uniquely expressed as a product of prime numbers.*
+
+This property makes prime numbers essential in factorization-based cryptography(e.g., RSA encryption). Their unpredictable distribution also provides security advantages in cryptographic algorithms.
+
+---
+
+### Prime Numbers in Cryptography
+Cryptographic security often relies on the difficulty of **factoring large prime numbers**. Modern encryption techniques, such as RSA and Diffie-Hellman key exchange, are built upon **the infeasibility of factorizing the product of two large primes**.
+
+#### **Public Key Cryptography (RSA)**
+- RSA encryption uses the product of two large primes (**p** and **q**) as part of its key generation.
+- The security of RSA depends on the difficulty of **prime factorization**—a problem that classical computers cannot efficiently solve for large numbers.
+- Example: A 2048-bit RSA key consists of two 1024-bit prime numbers.
+
+#### **Elliptic Curve Cryptography (ECC)**
+- ECC uses properties of prime numbers in modular arithmetic on elliptic curves.
+- Provides the same level of security as RSA with **smaller key sizes**, making it efficient for **mobile and IoT security**.
+
+#### **Primality Testing in Cryptography**
+Before using a number in cryptography, it must be verified as prime.  
+Common tests include:
+- **Miller-Rabin Test** (Probabilistic)
+- **AKS Primality Test** (Deterministic)
+- **Fermat’s Little Theorem** (Basic)
+
+---
+
+### Prime Number Algorithms: Trial Division vs. Sieve of Eratosthenes
+Finding prime numbers efficiently is a major challenge in computational mathematics.  
+Two well-known approaches are **Trial Division** and the **Sieve of Eratosthenes**.
+
+#### 1**Trial Division Algorithm**
+The **Trial Division method** determines if a number **n** is prime by checking divisibility from **2 up to** \( \sqrt{n} \).
+
+##### **Steps:**
+1. If \( n \) is **2 or 3**, return **True** (smallest primes).
+2. If \( n \) is even or divisible by 3, return **False**.
+3. Loop through odd numbers from **5** to **√n**, checking divisibility.
+
+##### ✅ **Advantages:**
+- Simple to understand and implement.
+- Good for small numbers.
+
+##### ❌ **Disadvantages:**
+- **Slow for large numbers** (Time complexity: \( O(\sqrt{n}) \)).
+- **Inefficient** when generating many primes.
+
+---
+
+#### **Sieve of Eratosthenes**
+The **Sieve of Eratosthenes** is an efficient way to find all prime numbers up to a given limit **N**.
+
+##### **Steps:**
+1. Create a boolean list of **N + 1** elements, all initially **True**.
+2. Mark **multiples of each prime** as **False** (starting from 2).
+3. Continue marking until reaching \( \sqrt{N} \).
+4. The remaining **True** indices correspond to **prime numbers**.
+
+##### ✅ **Advantages:**
+- Extremely fast for finding **many** primes.
+- **Time complexity:** \( O(n \log \log n) \), much faster than Trial Division.
+
+##### ❌ **Disadvantages:**
+- Uses more **memory** than Trial Division.
+- **Inefficient for checking a single prime number**.
+
+---
+
+### 📌 Comparing the Two Algorithms
+
+| **Feature**            | **Trial Division**        | **Sieve of Eratosthenes**  |
+|------------------------|-------------------------|---------------------------|
+| **Best Use Case**      | Checking **one number** for primality | Generating **many** primes efficiently |
+| **Time Complexity**    | \( O(\sqrt{n}) \)       | \( O(n \log \log n) \) |
+| **Space Complexity**   | \( O(1) \) (constant)   | \( O(n) \) (array storage) |
+| **Efficiency**         | Slow for large \( n \)  | Very fast for large \( n \) |
+| **Practical Use**      | Cryptographic validation (RSA keys) | Number theory, bulk prime generation |
+
+---
+
+### **Which One Should You Use?**
+- **Use Trial Division** when verifying if **one** number is prime (e.g., cryptography).
+- **Use Sieve of Eratosthenes** when **generating many primes efficiently**.
+
+---
+
+### Further Reading
+- [🔗 NIST Primality Testing Guidelines](https://csrc.nist.gov)
+- [🔗 RSA Cryptography Explained](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+- [🔗 Efficient Prime Finding (MIT OpenCourseWare)](https://ocw.mit.edu)
+
+---
 
 ## Task 5
 ### Roots
