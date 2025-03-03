@@ -624,8 +624,6 @@ For large-scale applications, **Sieve of Eratosthenes** is far superior in perfo
 
 To validate the correctness and efficiency of both **Trial Division** and **Sieve of Eratosthenes**, a comprehensive set of test cases was executed. These tests ensure accuracy, efficiency, and robustness under various conditions.
 
----
-
 ### Test Coverage
 
 | **Category**             | **Description**                                              | **Result**  |
