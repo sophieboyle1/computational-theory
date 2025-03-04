@@ -668,9 +668,20 @@ To ensure correctness, efficiency, and best practices, the following references 
 ---
 
 
+## Task 5 - Roots
 
-## Task 5
-### Roots
+### Overview  
+In cryptographic applications like **SHA-256**, certain constants are derived from prime numbers by extracting the **first 32 bits of the fractional part** of their **square roots**. These values help ensure **uniform distribution** and **high entropy**, making them suitable for cryptographic security.  
+
+To compute these values, the process involves:  
+- Generating the first 100 prime numbers using the **Sieve of Eratosthenes**.  
+- Calculating the square root of each prime.  
+- Extracting the **fractional part** of the square root.  
+- Scaling this value to **32 bits** using \(2^{32}\).  
+- Converting the result into a **hexadecimal representation**.  
+
+This approach provides cryptographic constants that are **non-repeating** and **well-distributed**, making them ideal for secure hashing algorithms.  
+
 
 ## Task 6
 ### Proof of Work
