@@ -682,6 +682,47 @@ To compute these values, the process involves:
 
 This approach provides cryptographic constants that are **non-repeating** and **well-distributed**, making them ideal for secure hashing algorithms.  
 
+---
+
+### Research and Insights  
+
+Prime numbers play a fundamental role in cryptography and computational number theory. The approach of extracting the **first 32 bits of the fractional part** of square roots is specifically used in cryptographic hash functions like **SHA-256**, where these constants help strengthen security.  
+
+#### Why Prime Numbers?  
+Prime numbers have unique mathematical properties that make them suitable for cryptographic applications:  
+- **Unpredictability** – Their distribution is irregular, reducing patterns in cryptographic algorithms.  
+- **Factorization Difficulty** – Many security protocols (e.g., RSA encryption) rely on the difficulty of factoring large primes.  
+- **Uniformity** – Prime-derived constants ensure that hash functions avoid predictable biases.  
+
+#### 🔢 The Mathematical Formula  
+The process follows the formula:
+
+$$
+\text{frac}(p) = p - \lfloor p \rfloor
+$$
+
+$$
+\text{frac32} = \lfloor \text{frac}(p) \times 2^{32} \rfloor
+$$
+
+This computation extracts a **32-bit unsigned integer** from the fractional part of the square root of a prime number, ensuring high entropy and non-repeating constants.  
+
+#### Cryptographic Relevance  
+In **SHA-256**, the first 8 computed values directly correspond to the **initial hash values** used in the algorithm:  
+
+| Prime | Approx. √p | Fractional Part | First 32 Bits (Hex) |
+|-------|------------|----------------|----------------------|
+| 2     | 1.414213  | 0.414213       | `0x6a09e667`        |
+| 3     | 1.732051  | 0.732051       | `0xbb67ae85`        |
+| 5     | 2.236068  | 0.236068       | `0x3c6ef372`        |
+| 7     | 2.645751  | 0.645751       | `0xa54ff53a`        |
+| 11    | 3.316625  | 0.316625       | `0x510e527f`        |
+| 13    | 3.605551  | 0.605551       | `0x9b05688c`        |
+| 17    | 4.123106  | 0.123106       | `0x1f83d9ab`        |
+| 19    | 4.358899  | 0.358899       | `0x5be0cd19`        |
+
+These values serve as initial hash constants in SHA-256, reinforcing the importance of prime-derived numbers in cryptographic security.
+
 
 ## Task 6
 ### Proof of Work
