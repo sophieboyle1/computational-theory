@@ -723,6 +723,91 @@ In **SHA-256**, the first 8 computed values directly correspond to the **initial
 
 These values serve as initial hash constants in SHA-256, reinforcing the importance of prime-derived numbers in cryptographic security.
 
+---
+
+## Functions Implemented
+
+For this task, two primary functions were implemented:
+
+1. **Prime Number Generation** – Using the **Sieve of Eratosthenes** to efficiently find the first 100 prime numbers.  
+2. **Fractional Part Extraction** – Computing the first 32 bits of the **fractional part** of the square root of each prime number.
+
+---
+
+### 1. Generating Prime Numbers with Sieve of Eratosthenes  
+The Sieve of Eratosthenes is an optimized algorithm that marks non-prime numbers by eliminating multiples of each prime.
+
+#### **Steps:**
+- Initialize a boolean list where all numbers are assumed to be prime.
+- Mark multiples of each prime starting from `2` as non-prime.
+- Continue the process up to `√n`, marking non-primes.
+- Extract the first 100 prime numbers.
+
+**Code Snippet:**  
+```python
+primes = sieve_of_eratosthenes(600)[:100]  # Get first 100 prime numbers
+```
+
+### 2. Extracting 32-Bit Fractional Part
+
+Once prime numbers are generated, I computed the **first 32 bits** of the **fractional part** of their **square roots**.
+
+#### **Steps:**
+1. Compute the **square root** of each prime.
+2. Extract the **fractional part** by subtracting the integer part.
+3. Multiply by **2³²** to scale the fraction.
+4. Convert to an **integer** to extract the first **32 bits**.
+
+#### **Code Snippet:**
+```python
+frac_part = math.sqrt(n) - math.floor(math.sqrt(n))
+frac32 = int(frac_part * 2**32)  # Extract first 32 bits
+```
+
+### 3. Computing & Displaying Results
+
+After computing the **32-bit fractional values**, the results are stored in a dictionary and displayed in a structured format.
+
+#### **Code Snippet:**
+```python
+results = {p: hex(first_32_frac_bits(p)) for p in primes}
+```
+
+### 📊 Results Table
+
+To present the results clearly, a **table format** is used:
+
+| Prime | Fractional Part (Hex) |
+|-------|----------------------|
+| 2     | 0x6a09e667          |
+| 3     | 0xbb67ae85          |
+| 5     | 0x3c6ef372          |
+| 7     | 0xa54ff53a          |
+| 11    | 0x510e527f          |
+| 13    | 0x9b05688c          |
+| 17    | 0x1f83d9ab          |
+| 19    | 0x5be0cd19          |
+
+---
+
+## Comparison of Work
+
+The approach for Task 5 involves extracting the first 32 bits of the fractional part of the square roots of the first 100 prime numbers. This method is chosen because it provides constants that are:
+
+- **Well-distributed** and **non-repeating**, essential for cryptographic security.
+- **Mathematically derived** from prime numbers, ensuring reproducibility and robustness.
+
+Below is a comparison between this method and alternative approaches:
+
+| **Approach**                         | **Description**                                                                                         | **Use in Cryptography**            | **Efficiency**                       | **Limitations**                                            |
+|--------------------------------------|---------------------------------------------------------------------------------------------------------|------------------------------------|--------------------------------------|-----------------------------------------------------------|
+| **Square Root Fractional Extraction** | Compute `sqrt(p)`, extract its fractional part, scale by \(2^{32}\), and convert to a 32-bit integer.    | Used for SHA-256 initial hash values. | Efficient for fixed-size inputs (100 primes). | Depends on floating-point precision.                    |
+| **Cube Root Fractional Extraction**   | Apply the same process to the cube roots of primes.                                                     | Used in some hash function variants.   | Comparable in efficiency.            | Yields different constants; not standard for SHA-256.     |
+| **Random Constant Generation**        | Generate constants using pseudo-random numbers.                                                       | Occasionally used, but less secure. | Very fast.                           | Lacks a mathematical basis and may introduce bias.      |
+
+**Conclusion:**  
+The **square root fractional extraction** method is preferred due to its strong **mathematical foundation** and its proven use in generating the **SHA-256 initialization constants**. This method balances efficiency with security, making it an ideal choice for cryptographic applications.
+
 
 ## Task 6
 ### Proof of Work
