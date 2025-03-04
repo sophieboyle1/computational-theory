@@ -276,7 +276,7 @@ Hashing ensures **efficient storage and retrieval** by minimizing **collisions**
 
 ---
 
-## Task 3 - SHA256
+## Task 3: SHA256
 
 ### Overview
 
@@ -382,7 +382,7 @@ The padding implementation was thoroughly tested to ensure correctness and adher
 
 ---
 
-## Task 4 - Prime Numbers
+## Task 4: Prime Numbers
 
 ### Overview
 Prime numbers play a fundamental role in number theory and cryptography. They are the building blocks of all integers, as described in the **Fundamental Theorem of Arithmetic**, which states that every integer greater than 1 can be uniquely represented as a product of prime numbers.
@@ -668,7 +668,7 @@ To ensure correctness, efficiency, and best practices, the following references 
 ---
 
 
-## Task 5 - Roots
+## Task 5: Roots
 
 ### Overview  
 In cryptographic applications like **SHA-256**, certain constants are derived from prime numbers by extracting the **first 32 bits of the fractional part** of their **square roots**. These values help ensure **uniform distribution** and **high entropy**, making them suitable for cryptographic security.  
