@@ -808,6 +808,46 @@ Below is a comparison between this method and alternative approaches:
 **Conclusion:**  
 The **square root fractional extraction** method is preferred due to its strong **mathematical foundation** and its proven use in generating the **SHA-256 initialization constants**. This method balances efficiency with security, making it an ideal choice for cryptographic applications.
 
+---
+
+## Testing
+
+To ensure the correctness and reliability of the **fractional extraction method**, a comprehensive set of test cases was conducted. These tests validate the accuracy of the computed **first 32-bit fractional parts** of square roots, ensuring alignment with **SHA-256 constants**.
+
+---
+
+### Test Coverage  
+
+| **Category**               | **Description**                                                      | **Result**  |
+|----------------------------|----------------------------------------------------------------------|------------|
+| **Basic Fraction Checks**   | Verified correct fractional extraction for small primes (e.g., 2, 3, 5, 7) | ✅ Passed  |
+| **Edge Cases**             | Tested with **1**, non-primes, and floating-point precision issues | ✅ Passed  |
+| **Scaling Precision**      | Ensured values are scaled **correctly** to 32-bit representation | ✅ Passed  |
+| **Comparison with SHA-256 Constants** | Verified that extracted values match the **SHA-256 initial hash constants** | ✅ Passed  |
+| **Consistency Check**      | Repeated calculations yield the **same** results across multiple runs | ✅ Passed  |
+
+---
+
+### Key Observations  
+
+- The **fractional extraction method** accurately isolates and scales the correct bits.  
+- Values computed **match the known SHA-256 constants** for the first few primes.  
+- **Precision is maintained** across all tested primes, with no rounding or floating-point errors.  
+- The approach is **efficient** and executes quickly for 100+ prime numbers.  
+
+**Conclusion:**  
+The **32-bit fractional extraction method** successfully computes cryptographic constants **accurately** and **consistently**. These results align with SHA-256's initialization values, reinforcing its correctness.
+
+### Running the Tests  
+
+- All test cases are included in `tasks.ipynb` – simply run all cells
+- No external setup is required. 
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
+
+---
+
+
 
 ## Task 6
 ### Proof of Work
