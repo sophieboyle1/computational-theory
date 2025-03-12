@@ -847,10 +847,36 @@ The **32-bit fractional extraction method** successfully computes cryptographic 
 
 ---
 
+## References
 
+This section provides references to relevant materials that support the concepts, algorithms, and methods used in **Task 5: Roots**.
 
-## Task 6
-### Proof of Work
+| **Reference** | **Description** | **Why It Was Used?** |
+|--------------|----------------|----------------------|
+| [NIST FIPS PUB 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final) | Secure Hash Standard (SHA-256) | Describes how SHA-256 constants are derived from prime numbers. |
+| [Cryptographic Hashing Explained](https://en.wikipedia.org/wiki/Cryptographic_hash_function) | Overview of cryptographic hash functions | Provides background on hash initialization constants and their significance. |
+| [Python Math Module](https://docs.python.org/3/library/math.html) | Python's `math` module documentation | Used for computing **square roots** and extracting fractional parts. |
+| [Sieve of Eratosthenes - Princeton Algorithms](https://algs4.cs.princeton.edu/15uf/) | Efficient prime number generation | Used to generate the **first 100 primes** efficiently. |
+| [SHA-256 Initial Constants](https://en.bitcoin.it/wiki/SHA-256) | Bitcoin Wiki explanation of SHA-256 constants | Validates computed values against SHA-256 predefined constants. |
+| [Floating Point Precision - IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) | IEEE 754 floating-point standard | Ensures correct handling of fractional calculations and precision. |
+
+---
+
+### Key Takeaways  
+
+- **SHA-256 constants** originate from the **fractional part of prime square roots** as per **NIST FIPS PUB 180-4**.  
+- The **Sieve of Eratosthenes** efficiently generates prime numbers, as supported by **Princeton's Algorithm Guide**.  
+- **Python's `math` module** enables accurate computation of **square roots** and **fractional extraction**.  
+- **IEEE 754 floating-point standard** ensures precision when scaling and extracting 32-bit values.  
+
+By utilizing these references, the implementation aligns with **industry standards** and **best practices** in cryptographic computations.  
+
+---
+
+## Task 6: Proof of Work.
+
+---
+
 
 ## Task 7
 ### Turing Machines
