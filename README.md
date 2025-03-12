@@ -1063,9 +1063,8 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 | `is_valid_word`                   | Python Docs - *String Methods*                                 | To verify that words are converted correctly and checked against the NLTK corpus. |
 | `sha256_leading_zeros`            | Nakamoto, S. (2008) - *Bitcoin: A Peer-to-Peer Electronic Cash System* | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
 
+---
 
-## Task 7
-### Turing Machines
+## Task 7: Turing Machines
 
-## Task 8
-### Computational Complexity
+## Task 8: Computational Complexity
