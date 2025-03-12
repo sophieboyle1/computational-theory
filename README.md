@@ -873,9 +873,24 @@ By utilizing these references, the implementation aligns with **industry standar
 
 ---
 
-## Task 6: Proof of Work.
+## Task 6: Proof of Work
 
----
+### Overview
+
+In cryptographic applications like **SHA-256**, hash functions produce **fixed-length outputs** that appear random. However, a unique property of hash outputs is the occurrence of **leading zero bits**, which is a key factor in **Proof-of-Work** systems used in **blockchain mining**.
+
+To explore this phenomenon, this task involves:
+
+- Retrieving a dataset of **English words**.
+- Computing the **SHA-256 hash** of each word.
+- Converting the hash to its **binary representation**.
+- Counting the number of **leading zero bits**.
+- Identifying words with the **highest number of leading zeros**.
+
+Since SHA-256 is a **cryptographic hash function**, the number of leading zeroes in any given hash is **probabilistic** and depends entirely on the properties of the input word. Words that naturally align with this structure may exhibit more leading zeroes, though this is not deterministic.
+
+This approach demonstrates **pre-image resistance**—a fundamental principle of cryptographic security—while also simulating aspects of **Proof-of-Work mining**, where computational effort is required to discover valid hashes.
+
 
 
 ## Task 7
