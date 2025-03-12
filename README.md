@@ -925,6 +925,89 @@ While this task does **not involve nonce-based mining**, it **mirrors** the conc
 
 ---
 
+## Functions Implemented  
+
+This task required implementing key functions to analyze **SHA-256 hashes** of English words and determine which had the highest number of **leading zero bits**. The functions were designed to efficiently compute, store, and compare hash results.
+
+### 1. Computing SHA-256 Hash & Leading Zero Count  
+A function was implemented to compute the **SHA-256 hash** of a given word and count the number of **leading zero bits** in its binary representation.
+
+#### **Key Steps:**  
+- Compute the SHA-256 hash using Python’s `hashlib` module.
+- Convert the **hexadecimal hash** to a **binary string** (256-bit representation).
+- Count the number of **leading zero bits**.
+
+#### **Code Snippet:**
+```python
+hash_hex = hashlib.sha256(word.encode()).hexdigest()  
+hash_bin = bin(int(hash_hex, 16))[2:].zfill(256)  
+leading_zeros = len(hash_bin) - len(hash_bin.lstrip('0'))
+```
+
+### 2. Processing a Dictionary of Words  
+To efficiently find words with the most leading zeroes, I used an English word dataset and processed each word to compute its leading zero count.
+
+#### **Key Steps:**  
+- Loaded an English word dataset (from NLTK).
+- Computed the **leading zero count** for each word.
+- Stored the results in a dictionary for easy comparison.
+
+#### **Code Snippet:**
+```python
+word_hashes = {word: sha256_leading_zeros(word) for word in english_words}
+```
+
+### 3. Finding the Best Candidates  
+Once all words were processed, the next step was to identify the word(s) with the highest number of leading zero bits. This was done by:
+
+- Computing the **maximum leading zero count**.
+- Extracting the words that matched this maximum count.
+
+#### **Key Steps:**  
+- Find the **maximum number of leading zero bits** from the computed results.
+- Extract all words that have this maximum count.
+
+#### **Code Snippet:**
+```python
+max_zeros = max(word_hashes.values())
+best_words = [word for word, zeros in word_hashes.items() if zeros == max_zeros]
+```
+
+### 4. Verifying Word Validity  
+It was important to ensure that the words with the highest number of leading zeroes were valid English words. To achieve this, the words were checked against the **NLTK word corpus** to confirm their validity.
+
+#### **Key Steps:**  
+- Used **NLTK's word corpus** to verify the validity of each word.
+- Only **valid words** were considered for final output.
+
+#### **Code Snippet:**
+```python
+def is_valid_word(word):
+    return word.lower() in words.words()
+```
+
+### 5. Displaying Results  
+Finally, I displayed the word(s) with the highest leading zero bits, including their corresponding **SHA-256 hash** and the number of leading zero bits.
+
+#### **Key Steps:**  
+- Display the words with the **most leading zeros**.
+- Show their **SHA-256 hash** and the number of **leading zero bits**.
+
+#### **Code Snippet:**
+```python
+for word in best_words[:10]:  # Display first 10 words with most leading zeroes
+    print(f"Word: {word}, Leading Zeros: {max_zeros}, SHA-256: {hashlib.sha256(word.encode()).hexdigest()}")
+```
+
+
+
+
+
+
+
+
+
+
 
 ## Task 7
 ### Turing Machines
