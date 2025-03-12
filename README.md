@@ -1050,6 +1050,20 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 
 *(For a more detailed breakdown of test cases, see the notebook.)*
 
+---
+
+## References
+
+| Function                          | Reference                                                      | Why It Was Used                                                                 |
+|-----------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `sha256_leading_zeros`            | NIST (2015) - *Secure Hash Standard (SHA-256)*                 | To understand the SHA-256 hashing process and its standard specification.      |
+| `sha256_leading_zeros`            | Schneier, B. (1996) - *Applied Cryptography*                   | To understand cryptographic hash functions and their properties (like pre-image resistance). |
+| `is_valid_word`                   | NLTK Docs - *NLTK Word Corpus*                                | To ensure that the words tested for leading zeros are valid English words.    |
+| `sha256_leading_zeros`            | Princeton University (2018) - *Cryptography and Cryptanalysis Lecture* | To understand the theoretical background of hash functions and their applications. |
+| `is_valid_word`                   | Python Docs - *String Methods*                                 | To verify that words are converted correctly and checked against the NLTK corpus. |
+| `sha256_leading_zeros`            | Nakamoto, S. (2008) - *Bitcoin: A Peer-to-Peer Electronic Cash System* | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
+
+
 ## Task 7
 ### Turing Machines
 
