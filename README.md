@@ -999,15 +999,41 @@ for word in best_words[:10]:  # Display first 10 words with most leading zeroes
     print(f"Word: {word}, Leading Zeros: {max_zeros}, SHA-256: {hashlib.sha256(word.encode()).hexdigest()}")
 ```
 
+## Comparison of Work
+
+| **Aspect**                      | **Blockchain Mining**                              | **This Task**                                         |
+|----------------------------------|----------------------------------------------------|------------------------------------------------------|
+| **Goal**                         | Find a nonce that results in a hash with leading zeros. | Find words with the highest number of leading zero bits in their SHA-256 hash. |
+| **Method**                       | Generate random nonces and hash them to meet difficulty requirements. | Hash predefined English words and analyze their leading zero bits. |
+| **Dataset**                      | Random nonces generated on-the-fly.                | A fixed dataset of English words from the NLTK corpus. |
+| **Computational Expense**        | High, requires significant processing power (e.g., ASICs, GPUs). | Moderate, processes a predefined dataset of words. |
+| **Difficulty Regulation**        | Adjusted dynamically by the network.               | Not applicable, but involves computing hash properties of words. |
+| **Cryptographic Focus**          | Ensures network security via Proof-of-Work.        | Examines the randomness of hash functions and how certain words align with SHA-256. |
+| **Hash Function Used**           | SHA-256                                           | SHA-256                                                |
+| **Outcome**                      | A valid block is mined with a hash that has a certain number of leading zeros. | Identification of words with the highest number of leading zero bits in their hash. |
+| **Efficiency**                   | Efficient at finding nonces through parallelism and large-scale computations. | Moderate in efficiency; larger dictionaries require more computation but can be optimized. |
+| **Relevance to Cryptography**    | Critical to secure decentralized networks.         | Demonstrates hash randomness and cryptographic unpredictability. |
+
+### Conclusion
+While both blockchain mining and this task use **SHA-256** hashes, the objectives and methods differ significantly. **Blockchain mining** focuses on generating nonces with the required hash properties to secure a network, while this task demonstrates how certain English words naturally align with cryptographic hash functions and their inherent randomness.
+
+---
 
 
+### Key Observations
 
+- **Edge cases** such as short words and repeated characters were handled appropriately.
+- **Performance** was good for processing a dictionary of words, but could be optimized further for larger datasets (e.g., by using parallel processing).
+- All **valid words** were correctly verified against the NLTK dictionary, ensuring real-world applicability of the results.
 
+---
 
+### Running the Tests  
 
+- All test cases are included in `tasks.ipynb` – simply run all cells
+- No external setup is required. 
 
-
-
+*(For a more detailed breakdown of test cases, see the notebook.)*
 
 ## Task 7
 ### Turing Machines
