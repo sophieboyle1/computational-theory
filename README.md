@@ -1019,12 +1019,27 @@ While both blockchain mining and this task use **SHA-256** hashes, the objective
 
 ---
 
-
 ### Key Observations
 
 - **Edge cases** such as short words and repeated characters were handled appropriately.
 - **Performance** was good for processing a dictionary of words, but could be optimized further for larger datasets (e.g., by using parallel processing).
 - All **valid words** were correctly verified against the NLTK dictionary, ensuring real-world applicability of the results.
+
+---
+
+## Testing
+
+Testing ensures the correctness and efficiency of the implemented functions. This task required testing the computation of **SHA-256 hashes**, counting of **leading zero bits**, and verification of word validity.
+
+### Test Coverage
+
+| **Category**             | **Description**                                              | **Result**  |
+|-------------------------|--------------------------------------------------------------|------------|
+| **Basic Functionality**  | Ensured the SHA-256 hash function works and computes leading zero bits correctly for known words like "example" | ✅ Passed  |
+| **Edge Case Handling**   | Tested edge cases such as very short words ("a") and long words | ✅ Passed  |
+| **Dictionary Verification** | Verified that only valid words from the NLTK corpus are processed | ✅ Passed  |
+| **Performance**          | Measured time for processing the entire dataset of English words | ✅ Passed  |
+| **Correct Output**       | Checked if words with the most leading zeros were correctly displayed with their hashes | ✅ Passed  |
 
 ---
 
