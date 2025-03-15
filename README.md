@@ -743,28 +743,42 @@ This approach provides cryptographic constants that are **non-repeating** and **
 
 ---
 
-## Research and Insights  
+## **Research and Insights** 🔬  
 
-Prime numbers play a fundamental role in cryptography and computational number theory. The approach of extracting the **first 32 bits of the fractional part** of square roots is specifically used in cryptographic hash functions like **SHA-256**, where these constants help strengthen security.  
+Prime numbers play a **critical role** in cryptography and computational number theory. One particularly **important application** is the derivation of **hash function constants** using the **fractional part of square roots of primes**. This method is specifically used in cryptographic hash functions like **SHA-256**, where these constants enhance **security, diffusion, and unpredictability** ([NIST FIPS PUB 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
 
-#### Why Prime Numbers?  
-Prime numbers have unique mathematical properties that make them suitable for cryptographic applications:  
-- **Unpredictability** – Their distribution is irregular, reducing patterns in cryptographic algorithms.  
-- **Factorization Difficulty** – Many security protocols (e.g., RSA encryption) rely on the difficulty of factoring large primes.  
-- **Uniformity** – Prime-derived constants ensure that hash functions avoid predictable biases.  
+---
+### **Why Prime Numbers?**  
+Prime numbers possess **unique mathematical properties** that make them ideal for cryptographic applications:  
 
-#### 🔢 The Mathematical Formula  
-The process follows the formula:
+- **Unpredictability** → The distribution of prime numbers appears **random**, reducing the risk of patterns in cryptographic algorithms ([Hardy & Wright, *An Introduction to the Theory of Numbers*](https://global.oup.com/academic/product/an-introduction-to-the-theory-of-numbers-9780199219865)).  
+- **Factorization Difficulty** → Many security protocols (e.g., **RSA encryption**) rely on the computational difficulty of factoring large prime numbers ([RSA Algorithm - NIST Guidelines](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf)).  
+- **Uniformity** → Constants derived from prime numbers ensure that hash functions avoid **predictable biases**, maintaining security against cryptographic attacks ([Understanding Cryptographic Hash Functions](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)).  
 
-$$
-\text{frac}(p) = p - \lfloor p \rfloor
-$$
+---
+### 🔢 **The Mathematical Formula**  
 
-$$
-\text{frac32} = \lfloor \text{frac}(p) \times 2^{32} \rfloor
-$$
+The constants in **SHA-256** are derived from the **fractional part of the square roots of prime numbers**. The calculation follows these steps:
 
-This computation extracts a **32-bit unsigned integer** from the fractional part of the square root of a prime number, ensuring high entropy and non-repeating constants.  
+1. **Extract the Fractional Part of a Square Root**  
+   $$
+   \text{frac}(\sqrt{p}) = \sqrt{p} - \lfloor \sqrt{p} \rfloor
+   $$
+   where \( p \) is a prime number.
+
+2. **Scale the Fractional Part to a 32-bit Integer**  
+   $$
+   \text{frac32} = \lfloor (\text{frac}(\sqrt{p}) \times 2^{32}) \rfloor
+   $$  
+   This extracts the **first 32 bits** of the fractional part, converting it into a **cryptographic constant**.
+
+
+### **📖 Further Reading:**  
+- [NIST FIPS PUB 180-4 – Secure Hash Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)  
+- [Cryptographic Hash Functions - Theory & Applications](https://crypto.stackexchange.com/questions/39718/how-are-hash-functions-derived)  
+- [Prime Numbers & Cryptographic Security](https://crypto.stackexchange.com/questions/15701/why-are-prime-numbers-used-in-cryptography)  
+
+---
 
 #### Cryptographic Relevance  
 In **SHA-256**, the first 8 computed values directly correspond to the **initial hash values** used in the algorithm:  
