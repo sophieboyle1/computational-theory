@@ -30,7 +30,6 @@ This repository contains solutions for the **Computational Theory** assessment. 
 ---
 
 ## **Project Structure**
-
 The repository is organized as follows:
 
 - `tasks.ipynb`: Jupyter notebook containing solutions for all tasks and tests.
@@ -38,29 +37,41 @@ The repository is organized as follows:
 - `.gitignore`: Specifies files and directories to ignore in Git.
 - `requirements.txt`: Lists dependencies required to run the project.
 
-## **Usage Instructions**
-To run the code and tests, follow these steps:
+## **Setup Instructions**
+To set up and run the code, follow these steps:
 
 ### Clone the repository
    ```sh
-   git clone <https://github.com/sophieboyle1/computational-theory>
+   git clone https://github.com/sophieboyle1/computational-theory.git
+   ```
+### Navigate to the repository directory
+   ```
+   cd computational-theory
    ```
 
-### Navigate to the repository directory
-   ```sh
-   cd <https://github.com/sophieboyle1/computational-theory>
+### Install dependencies
+   ```
+   pip install -r requirements.txt
+   ```
+
+Ensure you have Python 3.8 or later installed.
+If you don’t have Jupyter installed, install it manually:
+
+   ```
+   pip install jupyter
    ```
 
 ### Open the Jupyter notebook
-   ```sh
+   ```
    jupyter notebook tasks.ipynb
    ```
-- This will launch the notebook where you can run individual cells.
+- This will launch the Jupyter Notebook interface in your browser.
 
 ### Run the notebook cells
-- Execute the solutions directly within the Jupyter Notebook.
+- Execute the code by running individual cells within the notebook.
 
 ---
+
 
 ## Task 1: Binary Representations
 
