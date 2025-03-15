@@ -336,57 +336,67 @@ The method follows the exact structure described in the NIST SHA-2 specification
 
 ---
 
-### Research and Insights 🔬
+## **Research and Insights** 🔬
 
-SHA-256 is part of the SHA-2 family of cryptographic hash functions and is widely used for securing data, verifying integrity, and digital signatures. Before the hashing process, messages need to be **padded** to fit into 512-bit blocks.  
+SHA-256 is a part of the **SHA-2 family** of cryptographic hash functions, designed for **data integrity, secure authentication, and digital signatures**. It is widely used in applications such as **password hashing, blockchain security, and digital certificates**.  
 
-Padding is crucial because SHA-256 processes data in fixed-size blocks. If a message is shorter than a full block, padding ensures that the structure is maintained without ambiguity. This follows the Merkle–Damgård construction, which allows for secure hash functions to operate on variable-length inputs.  
+Before hashing, **messages must be padded** to ensure they conform to the **512-bit block size** required by the SHA-256 algorithm ([NIST FIPS PUB 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
 
-#### Why is Padding Necessary?
+Padding is essential because SHA-256 operates on **fixed-size blocks**. If the input message is too short, it must be **extended without introducing ambiguity**. This follows the **Merkle–Damgård construction**, a fundamental structure in cryptographic hash functions, which ensures that small input changes lead to drastically different hash outputs ([Cryptographic Hash Functions - Springer](https://link.springer.com/book/10.1007/978-3-319-21936-3)).
+
+---
+
+### **Why is Padding Necessary?**
 1. **Ensures Message Length is a Multiple of 512 Bits**  
-   - The SHA-256 compression function processes data in **512-bit chunks**.  
-   - If a message is too short, it needs to be extended while preserving uniqueness.  
+   - The **SHA-256 compression function** processes data in **512-bit chunks**.
+   - If a message is shorter than 512 bits, it must be **padded** to maintain a consistent structure ([SHA-2 Specification - RFC 6234](https://tools.ietf.org/html/rfc6234)).  
 
 2. **Prevents Collision & Length Extension Attacks**  
-   - Without proper padding, attackers could manipulate hashes by appending additional data.  
-   - Adding a length field at the end makes it difficult to extend an existing hash.  
+   - Without proper padding, an attacker could **append data** to an existing hash and manipulate it.  
+   - SHA-256 adds a **length field** at the end, preventing adversaries from extending the hash without detection ([Understanding Length Extension Attacks](https://crypto.stackexchange.com/questions/3975/what-is-a-length-extension-attack-and-how-can-it-be-prevented)).  
 
 3. **Follows the SHA-2 Specification**  
-   - Padding must conform to the exact structure outlined in **FIPS PUB 180-4**.  
-   - This ensures **compatibility** with cryptographic implementations.  
+   - SHA-256 **strictly defines the padding process** in **FIPS PUB 180-4**.
+   - Padding ensures **compatibility** with existing cryptographic standards, making SHA-256 widely accepted in **blockchain security, TLS/SSL encryption, and secure file verification**.  
 
-📖 **Further Reading:** 
-- [NIST FIPS PUB 180-4 – Secure Hash Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)
-- [Cryptographic Hashing and Padding Explained](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)
-- [SHA-256 Padding – A Technical Breakdown](https://en.wikipedia.org/wiki/SHA-2#Padding)
+📖 **Further Reading:**  
+- [NIST FIPS PUB 180-4 – Secure Hash Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)  
+- [Cryptographic Hashing and Padding Explained](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)  
+- [SHA-256 Padding – A Technical Breakdown](https://en.wikipedia.org/wiki/SHA-2#Padding)  
+
+---
+
+## **Functions Implemented**
+To correctly apply **SHA-256 padding**, several functions were implemented. Each function handles a specific step in ensuring the message is properly formatted before hashing.
+
+1. **Reading the File Contents**  
+   - The function reads the input **as raw bytes** to ensure that **all data is processed accurately**.  
+   - This is critical because **text encoding differences** (e.g., UTF-8 vs. ASCII) could lead to **hash mismatches**.
+
+2. **Computing the Original Bit Length**  
+   - Calculates the **exact length** of the input in bits.  
+   - This length is later **appended as metadata** to prevent **hash extension attacks**.
+
+3. **Appending the 1 Bit (`0x80` in Hex)**  
+   - SHA-256 **always** requires messages to **end with a single `1` bit** (binary `10000000` or `0x80` in hex).  
+   - This marks the **boundary** between the original message and the padding.  
+
+4. **Adding Zero Padding**  
+   - After the **1-bit marker**, **zero bits** (`0x00`) are appended **until the message is 448 bits mod 512**.
+   - This ensures the message length is aligned before adding the **final length field**.
+
+5. **Appending the Original Message Length**  
+   - The **exact bit length** of the original message (before padding) is stored as a **64-bit big-endian integer**.  
+   - This prevents **hash extension attacks** by ensuring the hash function cannot be manipulated post-processing.
+
+6. **Extracting the Padding for Verification**  
+   - This function isolates and extracts only the **padding bytes** to confirm the process was correctly applied.  
+   - The extracted padding is **converted into a human-readable hexadecimal format** for debugging and validation.
+
+Each function **strictly follows the SHA-2 specification**, ensuring the **input is securely processed** before the hashing algorithm executes.  
 
 ---
 
-### Functions Implemented
-
-To correctly apply SHA-256 padding, several functions were implemented, each handling a specific step of the process.
-
-1. **Reading the file contents**  
-   The function reads the input file as raw bytes to ensure all data is processed correctly.
-
-2. **Computing the original bit length**  
-   The function calculates the length of the input in bits, which is later appended to the message as part of the padding process.
-
-3. **Appending the 1 bit**  
-   SHA-256 requires the input to end with a single 1 bit (0x80 in hex) to clearly mark the message boundary.
-
-4. **Adding zero padding**  
-   After the 1 bit is added, zeros are appended to align the message to 448 bits modulo 512.
-
-5. **Appending the original message length**  
-   The final step is appending the original message length as a 64-bit big-endian integer to the end of the padded message.
-
-6. **Extracting the padding**  
-   This function isolates and extracts only the padding bytes, converting them into a human-readable hexadecimal format.
-
-Each function ensures compliance with the NIST SHA-2 specification, allowing the input to be securely processed by the SHA-256 hash function.
-
----
 
 ### Testing
 
