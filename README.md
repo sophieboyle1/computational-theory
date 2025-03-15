@@ -242,35 +242,47 @@ Hashing plays a crucial role in various applications, including:
 
 ---
 
-## Research and Insights 🔬  
+## **Research and Insights** 🔬  
 
-### Understanding Hash Functions  
-Hash functions are essential in computing, used for **data integrity, cryptography, and efficient data storage**. A hash function takes an input (e.g., a string) and converts it into a **fixed-length** integer, making it useful for fast lookups and detecting data modifications.  
+### **Understanding Hash Functions**  
+Hash functions are fundamental in computing, serving critical roles in **data integrity, cryptography, and efficient data retrieval**. A hash function takes an input (e.g., a string) and converts it into a **fixed-length integer**, making it useful for quick lookups and ensuring **data consistency** ([Python Docs - Hash Functions](https://docs.python.org/3/library/hashlib.html)).  
 
-Common applications of hashing:  
-- **Data Integrity** → Ensures that files and messages have not been altered.  
-- **Efficient Lookups** → Used in hash tables to enable quick data retrieval.  
-- **Cryptographic Security** → Protects sensitive information like passwords by making data irreversible.  
+Common applications of hashing include:  
+- **Data Integrity** → Ensures that files and messages remain unchanged during transmission.  
+- **Efficient Lookups** → Used in **hash tables and databases** to enable quick data retrieval ([MIT Lecture 4: Hashing](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/)).  
+- **Cryptographic Security** → Used in **password storage, digital signatures, and blockchain security** ([NIST FIPS PUB 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
 
-### Translating the C Function to Python  
-The original C function computes a hash using a **weighted sum** and a **modulo operation**. When converting it to Python, several adaptations were needed:  
-- **Removing Pointers** → Python strings are immutable, so we use a `for` loop instead of `char *s`.  
-- **Using ASCII Values** → The `ord()` function retrieves character ASCII values, replacing `*s`.  
-- **Maintaining Consistency** → The modulo 101 operation is kept to **limit hash values** to a fixed range.  
+---
 
-### Why Hashing Matters in Performance  
-Hashing ensures **efficient storage and retrieval** by minimizing **collisions** (when different inputs produce the same hash). A well-designed hash function:  
+### **Translating the C Function to Python**  
+The original **C function** computes a hash using a **weighted sum** and a **modulo operation**. When translating it into **Python**, several key adaptations were required:  
+
+- **Removing Pointers** → Python strings are immutable, so **direct character manipulation** with pointers is not possible. Instead, a **for loop** iterates over the string.  
+- **Using ASCII Values** → The `ord()` function retrieves character ASCII values, replacing pointer-based access (`*s`).  
+- **Maintaining Consistency** → The **modulo 101 operation** remains to **limit hash values** within a fixed range, ensuring consistent output across implementations ([Princeton Algorithms - Hashing](https://algs4.cs.princeton.edu/34hash/)).  
+
+---
+
+### **Why Hashing Matters for Performance**  
+A well-designed hash function ensures **efficient storage and retrieval** by minimizing **collisions** (cases where different inputs produce the same hash). This is essential for cryptographic security and fast indexing in databases.  
+
 - **Distributes values evenly** → Prevents clustering, which can slow down lookups.  
-- **Uses prime numbers** → Numbers like `31` and `101` reduce predictable cycles in hashing, improving performance.  
+- **Uses prime numbers** → Constants like `31` and `101` in hashing algorithms help ensure **uniform distribution**, reducing predictable cycles and improving performance ([Effective Java - Item 11: HashCode](https://docs.oracle.com/en/java/)).  
 
-### Real-World Applications of Hashing  
-- **Databases** → Indexing to speed up data searches.  
-- **Cryptography** → Secure password storage and digital signatures.  
-- **File Verification** → Checking for data corruption using hash checksums.  
+---
+
+### **Real-World Applications of Hashing**  
+Hash functions play a crucial role in:  
+
+- **Databases** → Hash-based indexing enables **constant-time lookups** in key-value stores like **Redis** and **MongoDB**.  
+- **Cryptography** → Secure **password hashing** (e.g., **SHA-256, bcrypt**) prevents easy password recovery from stolen databases ([NIST Cryptographic Standards](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
+- **File Verification** → Hashes such as **MD5, SHA-1, and SHA-256** are used to check file integrity by detecting **corruptions or unauthorized modifications**.  
 
 📖 **Further Reading:**  
-- [Python Docs - Hash Functions](https://docs.python.org/3/library/hashlib.html) 
-- [Lecture 4: Hashing from MIT's Introduction to Algorithms course](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/)
+- [Python Docs - Hash Functions](https://docs.python.org/3/library/hashlib.html)  
+- [MIT Lecture 4: Hashing from Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/)  
+- [Cryptographic Hashing Explained](https://crypto.stackexchange.com/questions/39680/why-do-hash-functions-need-padding)  
+
 
 ---
 
