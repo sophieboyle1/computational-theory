@@ -458,41 +458,48 @@ These two algorithms are widely used in computational mathematics and cryptograp
 - The **Trial Division** method is a fundamental approach that is often used in cryptographic key validation.
 - The **Sieve of Eratosthenes** is an essential technique for quickly generating prime numbers, which are crucial in applications such as **RSA encryption** and **hashing functions**.
 
-## Research and Insights
+## **Research and Insights** 🔬  
 
-Prime numbers play a fundamental role in mathematics, particularly in **number theory, cryptography, and computer science**. Their unique properties make them essential for secure communications, data encryption, and computational algorithms.
+Prime numbers are fundamental in **mathematics, cryptography, and computer science**, serving as the building blocks of **secure encryption, prime factorization, and efficient data structures**. Their **unique properties** make them essential for applications requiring **randomness, security, and irreversibility**.  
+
+The **unpredictable distribution** of prime numbers plays a **critical role in cryptographic security**, ensuring **strong encryption mechanisms** and **resistance to attacks** ([NIST Cryptographic Standards](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines)).  
 
 ---
 
-### Why Are Prime Numbers Important?
-Prime numbers are the **building blocks** of integers, as stated in the **Fundamental Theorem of Arithmetic**:
+### **Why Are Prime Numbers Important?**  
+Prime numbers are the **building blocks of integers**, as stated in the **Fundamental Theorem of Arithmetic**:
 
 > *Every integer greater than 1 can be uniquely expressed as a product of prime numbers.*
 
-This property makes prime numbers essential in factorization-based cryptography(e.g., RSA encryption). Their unpredictable distribution also provides security advantages in cryptographic algorithms.
+This **factorization property** makes primes **indispensable** in cryptography, particularly in algorithms that rely on **prime number factorization** for security, such as **RSA encryption** ([Introduction to Modern Cryptography, Katz & Lindell](https://www.cs.umd.edu/~jkatz/imc.html)).  
+
+### 🔐 **Prime Numbers in Cryptography**  
+The security of many cryptographic protocols relies on the difficulty of **factoring large prime numbers**. Modern encryption schemes like **RSA** and **Diffie-Hellman key exchange** depend on the **mathematical challenge of factoring the product of two large prime numbers**.
+
+#### **1️⃣ Public Key Cryptography (RSA)**  
+- The **RSA algorithm** generates keys by multiplying two **large prime numbers** (**p** and **q**).  
+- The security of RSA depends on the **infeasibility of prime factorization**—a problem that **classical computers cannot efficiently solve for sufficiently large numbers**.  
+- **Example:** A **2048-bit RSA key** is generated using two **1024-bit prime numbers**, ensuring **strong encryption** for sensitive data ([RSA Algorithm - NIST Guidelines](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf)).  
+
+#### **2️⃣ Elliptic Curve Cryptography (ECC)**  
+- **ECC** uses properties of **prime numbers** in **modular arithmetic over elliptic curves**.  
+- ECC provides **equivalent security** to RSA but with **smaller key sizes**, making it ideal for **resource-constrained devices (e.g., IoT, mobile security)**.  
+- Example: A **256-bit ECC key** provides the **same security level** as a **3072-bit RSA key**, reducing computational overhead while maintaining encryption strength ([NSA Suite B Cryptography](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-56a.pdf)).  
+
+#### **3️⃣ Primality Testing in Cryptography**  
+Before using a number in cryptographic systems, it must be **verified as prime**.  
+Common **primality tests** include:  
+- **Miller-Rabin Test** → A **probabilistic** test commonly used for **large primes** in cryptographic applications ([Miller & Rabin, 1976](https://dl.acm.org/doi/10.1145/321892.321894)).  
+- **AKS Primality Test** → A **deterministic** algorithm proving whether a number is prime in **polynomial time**.  
+- **Fermat’s Little Theorem** → A **basic** test used as a **preliminary filter** before applying more rigorous primality checks.  
+
+📖 **Further Reading:**  
+- [RSA Encryption and Prime Numbers - MIT OpenCourseWare](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-875-cryptography-and-cryptanalysis-fall-2005/)  
+- [NIST Guidelines on Cryptographic Primitives](https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines)  
+- [Elliptic Curve Cryptography Explained](https://safecurves.cr.yp.to/)  
 
 ---
 
-### Prime Numbers in Cryptography
-Cryptographic security often relies on the difficulty of **factoring large prime numbers**. Modern encryption techniques, such as RSA and Diffie-Hellman key exchange, are built upon **the infeasibility of factorizing the product of two large primes**.
-
-#### **Public Key Cryptography (RSA)**
-- RSA encryption uses the product of two large primes (**p** and **q**) as part of its key generation.
-- The security of RSA depends on the difficulty of **prime factorization**—a problem that classical computers cannot efficiently solve for large numbers.
-- Example: A 2048-bit RSA key consists of two 1024-bit prime numbers.
-
-#### **Elliptic Curve Cryptography (ECC)**
-- ECC uses properties of prime numbers in modular arithmetic on elliptic curves.
-- Provides the same level of security as RSA with **smaller key sizes**, making it efficient for **mobile and IoT security**.
-
-#### **Primality Testing in Cryptography**
-Before using a number in cryptography, it must be verified as prime.  
-Common tests include:
-- **Miller-Rabin Test** (Probabilistic)
-- **AKS Primality Test** (Deterministic)
-- **Fermat’s Little Theorem** (Basic)
-
----
 
 ### Prime Number Algorithms: Trial Division vs. Sieve of Eratosthenes
 Finding prime numbers efficiently is a major challenge in computational mathematics.  
@@ -736,7 +743,7 @@ This approach provides cryptographic constants that are **non-repeating** and **
 
 ---
 
-### Research and Insights  
+## Research and Insights  
 
 Prime numbers play a fundamental role in cryptography and computational number theory. The approach of extracting the **first 32 bits of the fractional part** of square roots is specifically used in cryptographic hash functions like **SHA-256**, where these constants help strengthen security.  
 
