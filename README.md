@@ -84,61 +84,80 @@ The goal was to create functions that simulate operations commonly seen in crypt
 
 ### **Research and Insights**  
 
-Bitwise operations are fundamental in **low-level computing**, used in **cryptography, data compression, networking, and graphics**. Since Python does not enforce fixed-width integers like C, **bit masking (`& 0xFFFFFFFF`)** is required to correctly simulate **32-bit unsigned integers**.
+Bitwise operations are fundamental to **low-level computing**, playing a key role in **cryptography, data compression, networking, and graphics**. Unlike C, which strictly enforces fixed-width integers (e.g., 32-bit unsigned integers), Python **automatically expands integers as needed**. To correctly **simulate a 32-bit unsigned integer**, operations must include **bit masking** (`& 0xFFFFFFFF`) to discard excess bits ([Python Docs - Bitwise Operations](https://docs.python.org/3/library/stdtypes.html#bitwise-operations)).  
 
-For Task 1, I implemented four key functions—**bitwise rotation (`rotl`, `rotr`), conditional selection (`ch`), and majority voting (`maj`)**—all of which play crucial roles in **cryptographic security and data manipulation**.
+For **Task 1**, I implemented four key functions—**bitwise rotation (`rotl`, `rotr`), conditional selection (`ch`), and majority voting (`maj`)**—which are **widely used in cryptographic security and data manipulation** ([FIPS PUB 180-4 - SHA-256 Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
 
 ---
 
 ### 🔐 **Bitwise Operations in Cryptography**  
 
-The functions in Task 1 are widely used in cryptographic hash functions like **SHA-256**, where bitwise operations ensure **diffusion** (spreading input bits widely) and **non-linearity** (making output unpredictable).  
+Bitwise functions are crucial in cryptographic hash functions like **SHA-256**, where they enhance **diffusion** (spreading input bits widely) and **non-linearity** (making output difficult to reverse) ([Shannon’s Principles of Cryptographic Security](https://en.wikipedia.org/wiki/Diffusion_(cryptography))).  
 
-- **`rotl(x, n)`, `rotr(x, n)`** – Used in cryptographic rounds to efficiently mix bits.  
-- **`ch(x, y, z)`** – Selects bits based on conditions, adding complexity to hashing functions.  
-- **`maj(x, y, z)`** – Determines the majority bit at each position, ensuring unpredictable outputs.  
-
-📖 **Further Reading:**  
-- [FIPS PUB 180-4: Secure Hash Standard (NIST)](https://csrc.nist.gov/publications/detail/fips/180/4/final)  
-- [Understanding Bitwise Operations in Cryptographic Algorithms](https://medium.com/%40conniezhou678/mastering-data-algorithm-part-30-mastering-bitwise-manipulation-in-python-81d03ff6f36d)  
+- **`rotl(x, n)`, `rotr(x, n)`** – Used in cryptographic rounds to **shuffle bits efficiently**, ensuring that small input changes drastically alter the output.  
+- **`ch(x, y, z)`** – Selects bits based on conditions, adding complexity and increasing non-linearity in hash functions.  
+- **`maj(x, y, z)`** – Determines the majority bit at each position, reinforcing randomness and strengthening security ([Understanding Bitwise Operations in Cryptographic Algorithms](https://medium.com/%40conniezhou678/mastering-data-algorithm-part-30-mastering-bitwise-manipulation-in-python-81d03ff6f36d)).  
+ 
 
 ---
 
 ### 🚀 **Real-World Applications Beyond Cryptography**  
 
-Bitwise operations go far beyond cryptographic security and play a major role in:  
+Bitwise operations extend beyond cryptographic security and play a major role in various fields, including **data compression, networking, and image processing**.  
 
-- **Data Compression** – Algorithms like **Huffman coding** use bitwise packing to reduce storage.  
-- **Networking & Protocols** – TCP/IP headers store flags using bitwise masks for fast packet processing.  
-- **Graphics & Image Processing** – Extracting RGB channels from a pixel value using bitwise masking:  
+- **Data Compression** – Algorithms like **Huffman coding** and **Run-Length Encoding (RLE)** use bitwise operations to pack data into smaller units, reducing storage space ([Data Compression Explained](https://www.cs.usfca.edu/~galles/visualization/huffman.html)).  
+
+- **Networking & Protocols** – Protocols like **TCP/IP, IPv4, and Ethernet** use bitwise masks to efficiently store and manipulate header flags. For example, **subnet masks** in networking rely on **bitwise AND operations** to determine whether two IP addresses belong to the same network ([RFC 791 - Internet Protocol](https://tools.ietf.org/html/rfc791)).  
+
+- **Graphics & Image Processing** – Bitwise operations help extract **RGB** color channels from a **24-bit pixel** value. Since color data is stored as **bit fields**, using bitwise shifts and masks is significantly faster than arithmetic operations.  
   ```python
   red = (pixel_value >> 16) & 0xFF  # Extracts the red component
----
+  green = (pixel_value >> 8) & 0xFF  # Extracts the green component
+  blue = pixel_value & 0xFF  # Extracts the blue component
+   ```
 
 ### **Functions Implemented**
 
+Each function plays a crucial role in cryptographic algorithms like **SHA-256**, where bitwise operations ensure **diffusion, non-linearity, and security** ([FIPS PUB 180-4 - SHA-256 Standard](https://csrc.nist.gov/publications/detail/fips/180/4/final)).  
+
 1. **`rotl(x, n)` - Rotate Left**  
-   Rotates the bits of a 32-bit unsigned integer `x` to the left by `n` positions.  
-   - Overflow bits wrap around to the rightmost positions.
-   - Example: `rotl(0b0001, 2)` → `0b0100`.
-
+   Performs a **left circular shift** on a 32-bit unsigned integer `x` by `n` positions.  
+   - Overflow bits **wrap around** to the rightmost positions.
+   - Used in cryptographic hash functions (e.g., SHA-256) to **shuffle bits efficiently**, ensuring that small input changes drastically alter the output (avalanche effect).  
+   - Example:  
+     ```python
+     rotl(0b0001, 2)  # Output: 0b0100
+     ```
+   
 2. **`rotr(x, n)` - Rotate Right**  
-   Rotates the bits of a 32-bit unsigned integer `x` to the right by `n` positions.  
-   - Overflow bits wrap around to the leftmost positions.
-   - Example: `rotr(0b1000, 1)` → `0b0100`.
-
+   Performs a **right circular shift** on a 32-bit unsigned integer `x` by `n` positions.  
+   - Overflow bits **wrap around** to the leftmost positions.
+   - Used in cryptographic compression functions to **spread entropy** across bits, increasing randomness.  
+   - Example:  
+     ```python
+     rotr(0b1000, 1)  # Output: 0b0100
+     ```
+   
 3. **`ch(x, y, z)` - Choose Function**  
-   The function conditionally selects bits based on the value of `x`.  
-   - Where `x` has `1`s, it chooses the corresponding bits from `y`.  
-   - Where `x` has `0`s, it chooses the corresponding bits from `z`.
-   - Example: `ch(0b1010, 0b1111, 0b0000)` → `0b1010`.
+   A conditional selection function that picks bits based on `x`.  
+   - If `x` has a **1**, it selects the corresponding bit from `y`.  
+   - If `x` has a **0**, it selects the corresponding bit from `z`.  
+   - Used in **SHA-256 compression functions** to introduce **non-linearity**, making hash outputs unpredictable ([SHA-2 Explained](https://en.wikipedia.org/wiki/SHA-2)).  
+   - Example:  
+     ```python
+     ch(0b1010, 0b1111, 0b0000)  # Output: 0b1010
+     ```
 
 4. **`maj(x, y, z)` - Majority Function**  
-   Determines the majority bit at each position among `x`, `y`, and `z`.  
-   - If at least two of the inputs have `1`s at a given position, the output will have a `1`.
-   - Example: `maj(0b1010, 0b1111, 0b0000)` → `0b1010`.
-
+   Determines the **majority bit** at each position among `x`, `y`, and `z`.  
+   - If at least **two of the inputs** have `1`s at a given position, the output will be `1`.  
+   - Used in cryptographic hashing to **reinforce randomness and security**, making the output difficult to reverse ([Understanding Bitwise Operations in Cryptographic Algorithms](https://medium.com/%40conniezhou678/mastering-data-algorithm-part-30-mastering-bitwise-manipulation-in-python-81d03ff6f36d)).  
+   - Example:  
+     ```python
+     maj(0b1010, 0b1111, 0b0000)  # Output: 0b1010
+     ```
 ---
+
 
 ### Comparison of Work
 
