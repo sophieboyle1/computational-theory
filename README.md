@@ -1189,7 +1189,56 @@ This reflects the logic of **binary addition with carry propagation** and demons
 
 ---
 
+## Functions Implemented
 
+The Turing Machine for binary incrementation is implemented using a Python class structure. It simulates a tape-based machine that reads and modifies binary digits one step at a time using simple logic and state transitions.
+
+### 1. `__init__(self, input_binary)`
+Initializes the Turing Machine:
+- Converts the input binary string into a mutable tape (list of characters).
+- Appends a blank symbol (`"_"`) to simulate infinite tape space.
+- Sets the head to the **right-most non-blank symbol** (LSB).
+- Initializes the machine state to `"Find_LSB"`.
+
+> **Why?**  
+> This sets up the machine to begin processing from the correct starting point, mimicking Turing Machine tape mechanics.
+
+---
+
+### 2. `__str__(self)`
+Returns the final binary output as a string:
+- Joins the tape and removes any trailing blanks for cleaner output.
+
+---
+
+### 3. `step(self)`
+Performs a **single step** based on the current state:
+- If the symbol under the head is `"1"`:
+  - Change it to `"0"` and move the head left (carry propagation).
+- If the symbol is `"0"`:
+  - Change it to `"1"` and enter the `HALT` state (no carry needed).
+- If the head moves past the left end (all bits were `"1"`):
+  - Insert a `"1"` at the front to handle overflow (e.g., `111 → 1000`).
+
+> 🔁 This function reflects the logic in the **state transition table** defined for Task 7.
+
+---
+
+### 4. `run(self)`
+Runs the Turing Machine until it reaches the `HALT` state:
+- Calls the `step()` method repeatedly.
+- Returns the final binary string after all transitions are complete.
+
+---
+
+### Example Usage
+
+```python
+# Example usage
+tm = TuringMachine("100111")
+result = tm.run()
+print(result)  # Output: 101000
+```
 
 
 
