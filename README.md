@@ -1140,4 +1140,24 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 
 ## Task 7: Turing Machines
 
+### Overview  
+This task focuses on designing a **Turing Machine** that performs a simple yet fundamental operation: **adding 1 to a binary number**. The machine operates on a one-dimensional tape, simulating the behavior of an early computational model proposed by **Alan Turing** in 1936.
+
+The binary number is read **from left to right**, with the **right-most digit treated as the least significant bit (LSB)**. The Turing Machine uses a set of predefined rules and transitions to:
+
+- Locate the LSB
+- Perform binary addition by flipping bits
+- Handle **carry propagation**
+- Deal with **overflow** by extending the tape
+
+This task not only illustrates **Turing completeness**, but also reinforces the connection between theoretical models and practical computation.
+
+The implementation demonstrates:
+- A working simulation of a Turing Machine using Python.
+- A state-based approach to modifying binary values.
+- How basic arithmetic operations can be modeled through tape manipulation and state transitions.
+
+---
+
+
 ## Task 8: Computational Complexity
