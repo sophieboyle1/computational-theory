@@ -1274,6 +1274,53 @@ All tests passed, and the state machine correctly handled edge cases including *
 
 This comparison helped solidify the connection between **abstract computation theory** and **real-world programming**. It highlighted how even basic arithmetic operations like binary incrementation require thoughtful design when modeled through state transitions.
 
+---
+
+## Testing
+
+To ensure correctness, I created test cases that cover standard and edge-case binary inputs. These tests verify that the Turing Machine correctly performs:
+
+- **Binary incrementation**
+- **Carry propagation**
+- **Overflow handling**
+
+### ✅ Test Coverage
+
+| **Category**             | **Description**                                                                 | **Result**  |
+|-------------------------|---------------------------------------------------------------------------------|-------------|
+| **Basic Functionality** | Verified that the Turing Machine correctly increments standard binary numbers (e.g., `"100111"` → `"101000"`) | ✅ Passed   |
+| **All 1s Input**         | Tested input like `"111"` to ensure the machine correctly handles carry overflow and extends the tape (`"111"` → `"1000"`) | ✅ Passed   |
+| **Trailing Zeros**      | Checked if binary numbers ending in multiple zeros (e.g., `"1000"`) are incremented correctly without false carry | ✅ Passed   |
+| **Single Bit Input**    | Ensured edge case with one-bit input (e.g., `"1"` or `"0"`) is handled correctly | ✅ Passed   |
+| **Tape Expansion**      | Verified that the tape dynamically grows when needed to accommodate overflow     | ✅ Passed   |
+| **Stability**           | Ensured no infinite loops or index errors occurred during execution             | ✅ Passed   |
+
+### Sample Code Snippet
+
+```
+binary_input = list("100111")
+result = turning_machine_add_one(binary_input)
+print(result)  # Output: "101000"
+```
+
+### Running the Tests  
+
+- All test cases are included in `tasks.ipynb` – simply run all cells
+- No external setup is required. 
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
+
+---
+
+## References
+
+| **Function / Concept**          | **Reference**                                                                                     | **Why It Was Used**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| `turning_machine_add_one`      | [Stanford Encyclopedia of Philosophy – Turing Machines](https://plato.stanford.edu/entries/turing-machine/) | To understand the formal model of a Turing Machine and how it manipulates symbols.  |
+| `turning_machine_add_one`      | [MIT OpenCourseWare – Introduction to Turing Machines](https://ocw.mit.edu/)                     | For insights into how state transitions and tape operations simulate computation.    |
+| **Binary Incrementation Logic**| Abelson, H. & Sussman, G.J. (1996) – *Structure and Interpretation of Computer Programs*         | To explore binary arithmetic and carry propagation from a computational perspective. |
+| **Overflow & Tape Expansion**  | Sipser, M. (2012) – *Introduction to the Theory of Computation*                                   | To support understanding of infinite tape handling and formal computation rules.     |
+| **State Transitions & Testing**| [Python Documentation – `unittest`](https://docs.python.org/3/library/unittest.html)             | To structure automated tests and validate each scenario (e.g., overflow, edge cases).|
 
 
 
