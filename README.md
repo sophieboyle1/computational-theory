@@ -1240,6 +1240,41 @@ result = tm.run()
 print(result)  # Output: 101000
 ```
 
+## Comparison of Work
+
+### Theoretical vs. Practical Implementation
+
+This task involved simulating a **Turing Machine** for binary incrementation. While conceptually simple, it allowed for deeper comparison between **theoretical Turing Machine models** and **practical code implementations**.
+
+| Aspect | Theoretical Turing Machine | Python Implementation |
+|--------|-----------------------------|------------------------|
+| **Tape** | Infinite in both directions | Simulated with a Python list, extended when overflow occurs |
+| **Head Movement** | Moves left or right, reads and writes | Simulated via index manipulation |
+| **State Transitions** | Governed by transition table | Implemented as a `step()` method within a class |
+| **Halting** | Machine enters HALT state | `run()` method stops when state becomes `"HALT"` |
+| **Overflow Handling** | Insert new `1` to left of tape | Achieved by `insert(0, "1")` in Python |
+
+---
+
+### ✅ Output Verification
+
+The outputs of this implementation match expectations from standard **binary addition with carry**. For example:
+
+| Input | Expected Output | Turing Machine Output |
+|-------|------------------|------------------------|
+| `100110` | `100111` | ✅ |
+| `100111` | `101000` | ✅ |
+| `111`    | `1000`   | ✅ |
+
+All tests passed, and the state machine correctly handled edge cases including **carry propagation** and **overflow**.
+
+---
+
+### Learning Outcome
+
+This comparison helped solidify the connection between **abstract computation theory** and **real-world programming**. It highlighted how even basic arithmetic operations like binary incrementation require thoughtful design when modeled through state transitions.
+
+
 
 
 ## Task 8: Computational Complexity
