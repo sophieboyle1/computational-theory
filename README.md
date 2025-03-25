@@ -1400,7 +1400,37 @@ The **brute-force permutation analysis** method used in this task provides a **c
 
 ---
 
+## Testing
 
+To validate the correctness and performance of the Bubble Sort implementation, a series of tests were conducted to ensure reliable behavior across all expected input scenarios.
+
+The tests focused on:
+
+- ✅ **Correctness**: Confirming that the number of comparisons aligns with expected complexity.
+- ✅ **Edge Case Handling**: Handling empty or single-element lists without errors.
+- ✅ **Performance**: Ensuring stability across all 120 permutations of `[1, 2, 3, 4, 5]`.
+
+### Test Coverage
+
+| **Category**             | **Description**                                                                 | **Result**  |
+|-------------------------|----------------------------------------------------------------------------------|-------------|
+| **Basic Functionality** | Bubble Sort correctly sorts and counts comparisons for each permutation.         | ✅ Passed   |
+| **Best Case**           | Already sorted list requires minimum comparisons (4 comparisons).                | ✅ Passed   |
+| **Worst Case**          | Reverse sorted list hits the max comparisons (10 comparisons).                   | ✅ Passed   |
+| **Average Case**        | Random permutations yield 6–9 comparisons, consistent with O(n²) complexity.     | ✅ Passed   |
+| **Empty List**          | Algorithm handles `[]` without failure.                                          | ✅ Passed   |
+| **Single Element**      | List with one item (`[1]`) returns 0 comparisons.                                | ✅ Passed   |
+| **Stability**           | All 120 permutations execute without crashes or infinite loops.                  | ✅ Passed   |
+
+
+### Running the Tests  
+
+- All test cases are included in `tasks.ipynb` – simply run all cells
+- No external setup is required. 
+
+*(For a more detailed breakdown of test cases, see the notebook.)*
+
+---
 
 
 
