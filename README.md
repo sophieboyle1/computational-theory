@@ -1324,4 +1324,42 @@ print(result)  # Output: "101000"
 
 
 
-## Task 8: Computational Complexity
+## Task 8: Computational Complexity – Bubble Sort Analysis
+
+### Overview
+
+This task focuses on analyzing the computational complexity of the Bubble Sort algorithm through a practical, exhaustive approach.
+
+The core objective was to:
+- Implement a **Bubble Sort** algorithm that counts the number of comparisons made.
+- Apply it to **every permutation** of the list `[1, 2, 3, 4, 5]` (120 total permutations).
+- Record and analyze the **number of comparisons** needed for each permutation.
+- Use the results to understand **best-case, average-case, and worst-case** performance.
+
+Bubble Sort is a simple comparison-based sorting algorithm that has a worst-case time complexity of **O(n²)**. While inefficient for large datasets, it's excellent for demonstrating sorting logic, comparison count analysis, and complexity trends.
+
+This task allowed me to bridge theory with practice by validating Big-O behavior using real data. It also reinforced why understanding **input order** is critical when evaluating an algorithm’s efficiency.
+
+---
+
+## Research and Insights
+
+Bubble Sort is one of the simplest sorting algorithms and is widely used in educational contexts to introduce the concept of computational complexity. It works by repeatedly comparing and swapping adjacent elements in a list until the entire list is sorted.
+
+Although inefficient for large datasets due to its quadratic time complexity, Bubble Sort is a valuable tool for learning how algorithm performance varies depending on input structure. As described in [GeeksforGeeks – Bubble Sort](https://www.geeksforgeeks.org/bubble-sort/), the algorithm has:
+
+- **Best-case complexity** of O(n) when the input is already sorted.
+- **Average and worst-case complexity** of O(n²), especially for reverse-sorted or random input.
+
+In this task, I explored these performance variations by exhaustively applying Bubble Sort to all 120 permutations of a 5-element list using `itertools.permutations` from the [Python itertools module](https://docs.python.org/3/library/itertools.html). This brute-force approach helped validate theoretical claims about time complexity with real data.
+
+This analysis was inspired by methods of evaluating algorithm behavior discussed in [MIT OpenCourseWare – Sorting Complexity](https://ocw.mit.edu), which emphasizes using empirical data to deepen understanding of best, worst, and average-case performance.
+
+Additionally, I used resources like [BuiltIn – Bubble Sort Explained](https://builtin.com) to better understand how simple optimizations (like early termination when no swaps occur) can significantly impact the algorithm’s performance on nearly sorted input.
+
+---
+
+
+
+
+
