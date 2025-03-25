@@ -15,9 +15,9 @@ This repository contains solutions for the **Computational Theory** assessment. 
 8. [Task 5: Roots](#task-5-roots)  
 9. [Task 6: Proof of Work](#task-6-proof-of-work)  
 10. [Task 7: Turing Machines](#task-7-turing-machines)  
-11. [Task 8: Computational Complexity](#task-8-computational-complexity)  
-12. [References](#references)  
-13. [Conclusion](#conclusion)  
+11. [Task 8: Computational Complexity](#task-8-computational-complexity) 
+12. [Final Thoughts & Conclusion](#final-thoughts--conclusion)
+13. [References](#references)
 
 **Each task is structured as follows:**  
 - **Overview**  
@@ -1432,7 +1432,62 @@ The tests focused on:
 
 ---
 
+## References
 
+| **Topic**               | **Reference**                                                                 | **Why It Was Used**                                                                 |
+|------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| Bubble Sort Algorithm   | [GeeksforGeeks – Bubble Sort](https://www.geeksforgeeks.org/bubble-sort/)     | To understand the step-by-step logic and behavior of Bubble Sort.                   |
+| Algorithm Complexity    | [MIT OCW – Sorting Algorithms](https://ocw.mit.edu)                            | To confirm theoretical time complexities and comparison expectations.               |
+| Permutations            | [Python Docs – itertools.permutations](https://docs.python.org/3/library/itertools.html#itertools.permutations) | To generate all 120 permutations of the 5-element list.                             |
+| Optimization Techniques | [Real Python – Efficient Code](https://realpython.com)                        | Helped with optimizing the Bubble Sort (early exit condition).                      |
+| Visualization Insight   | [CS50 – Sorting Visualizations](https://cs50.harvard.edu/)                    | Provided intuition for how Bubble Sort operates through animations and visuals.     |
+
+---
+
+---
+
+## Final Thoughts and Conclusion
+
+This notebook presents a comprehensive journey through key topics in **Computational Theory**, combining core principles with hands-on Python implementation. Each of the eight tasks explored a different aspect of how computers process, secure, and analyze information at a low level.
+
+### Task Highlights
+
+- **Task 1: Binary Representations**  
+  Introduced essential bitwise operations such as rotations, majority, and choice — foundational in cryptography.
+
+- **Task 2: Hash Functions**  
+  Explored simple hashing techniques and the importance of prime constants in minimizing hash collisions.
+
+- **Task 3: SHA-256 Padding**  
+  Demonstrated how padding ensures that messages conform to fixed-length blocks required by cryptographic hash functions.
+
+- **Task 4: Prime Numbers**  
+  Compared deterministic and probabilistic methods for generating primes, showing their trade-offs in performance and accuracy.
+
+- **Task 5: Roots**  
+  Extracted 32-bit fractional root values from primes — constants used in cryptographic algorithms like SHA-256.
+
+- **Task 6: Proof of Work**  
+  Simulated a mining-like challenge by finding English words whose SHA-256 hashes begin with leading zero bits, connecting theory with blockchain concepts.
+
+- **Task 7: Turing Machine**  
+  Built a simple machine that incremented a binary number, reinforcing the fundamentals of state-based computation.
+
+- **Task 8: Computational Complexity**  
+  Analyzed the Bubble Sort algorithm across all permutations of a 5-element list, validating theoretical complexity with practical data.
+
+### 📚 Key Takeaways
+
+- Computational theory has real-world impact — from hashing and encryption to optimization and automation.
+- Understanding bitwise logic, hashing mechanisms, and sorting complexity provides a strong foundation for fields like **cybersecurity**, **data science**, and **algorithm design**.
+- Testing and edge case handling are critical in verifying the correctness and robustness of any implementation.
+- Visualizing and measuring algorithm performance offers valuable insight into theoretical claims.
+
+### 🚀 Final Reflection
+
+From **bit manipulation to Turing completeness**, this notebook has strengthened my understanding of how computers "think" and operate. Each task challenged me to not only implement algorithms but also to understand their **underlying logic, applications, and limitations**. The experience has boosted my confidence in solving abstract computational problems with practical tools.
+
+---
 
 
 
