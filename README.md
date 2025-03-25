@@ -1446,7 +1446,7 @@ The tests focused on:
 
 ---
 
-## Final Thoughts and Conclusion
+## Final Thoughts & Conclusion
 
 This notebook presents a comprehensive journey through key topics in **Computational Theory**, combining core principles with hands-on Python implementation. Each of the eight tasks explored a different aspect of how computers process, secure, and analyze information at a low level.
 
