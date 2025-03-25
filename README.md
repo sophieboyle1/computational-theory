@@ -1382,6 +1382,27 @@ This function was applied to all 120 permutations of the list `[1, 2, 3, 4, 5]` 
 
 ---
 
+## Comparison of Work
+
+Below is a comparison between the brute-force permutation analysis method used in this task and other common approaches to analyzing sorting complexity:
+
+| **Approach**                         | **Description**                                                                 | **Use Case**                          | **Accuracy**                          | **Limitations**                              |
+|-------------------------------------|---------------------------------------------------------------------------------|---------------------------------------|----------------------------------------|----------------------------------------------|
+| Brute-Force Permutation Analysis    | Run the algorithm on every possible permutation of the input to gather exact metrics. | Used in this task for Bubble Sort     | Very high – every case is observed     | Only feasible for small n (e.g., n = 5)       |
+| Theoretical Case Analysis           | Analyze algorithm based on best, average, and worst-case scenarios mathematically.     | Standard in textbooks and research     | High – based on asymptotic behavior    | Doesn't capture real-world edge cases         |
+| Empirical Testing (Random Samples)  | Run algorithm on multiple random inputs to estimate average behavior.                  | Used in benchmarking                  | Moderate – depends on sample size      | Results may vary; lacks completeness          |
+| Visualization-Based Analysis        | Use graphical tools to trace swaps and comparisons visually.                          | Helpful in education/demonstration    | Qualitative, not always quantitative   | Doesn't scale; lacks statistical depth        |
+
+---
+
+**Conclusion**:  
+The **brute-force permutation analysis** method used in this task provides a **complete and quantifiable** understanding of Bubble Sort's behavior on a fixed-size input. While computationally intensive, it is well-suited for small datasets and reinforces complexity concepts through real data.
+
+---
+
+
+
+
 
 
 
