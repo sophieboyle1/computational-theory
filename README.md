@@ -1324,7 +1324,7 @@ print(result)  # Output: "101000"
 
 
 
-## Task 8: Computational Complexity – Bubble Sort Analysis
+## Task 8: Computational Complexity
 
 ### Overview
 
@@ -1358,6 +1358,30 @@ This analysis was inspired by methods of evaluating algorithm behavior discussed
 Additionally, I used resources like [BuiltIn – Bubble Sort Explained](https://builtin.com) to better understand how simple optimizations (like early termination when no swaps occur) can significantly impact the algorithm’s performance on nearly sorted input.
 
 ---
+
+## Functions Implemented
+
+For this task, I implemented a customized version of the **Bubble Sort** algorithm that counts the number of **comparisons** made during sorting. This allowed for a detailed analysis of computational complexity across various input permutations.
+
+### 🔧 `bubble_sort_count_comparisons(arr: list) -> tuple`
+This function performs Bubble Sort on a given list and tracks the number of comparisons made during the process.
+
+#### **Key Features:**
+- **Comparison Counter**: Tallies each element-to-element comparison.
+- **Early Termination**: If no swaps are made during a pass, the function exits early, optimizing performance for sorted lists.
+- **Stable Sorting**: Maintains the relative order of elements with equal values.
+- **Returns**: A tuple of the sorted list and the total comparison count.
+
+#### Example:
+```python
+bubble_sort_count_comparisons([5, 4, 3, 2, 1])
+# Output: ([1, 2, 3, 4, 5], 10)
+```
+
+This function was applied to all 120 permutations of the list `[1, 2, 3, 4, 5]` to measure and compare the number of comparisons needed for each, providing a comprehensive view of Bubble Sort's behavior across different input orders.
+
+---
+
 
 
 
