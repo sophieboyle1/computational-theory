@@ -1298,8 +1298,8 @@ To ensure correctness, I created test cases that cover standard and edge-case bi
 ### Sample Code Snippet
 
 ```
-binary_input = list("100111")
-result = turning_machine_add_one(binary_input)
+tm = TuringMachine("100111")
+result = tm.run()
 print(result)  # Output: "101000"
 ```
 
