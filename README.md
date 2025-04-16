@@ -954,7 +954,7 @@ In cryptographic applications like **SHA-256**, hash functions produce **fixed-l
 
 To explore this phenomenon, this task involves:
 
-- Retrieving a dataset of **English words**.
+- Loading a local text file of English words `(words_alpha.txt).`
 - Computing the **SHA-256 hash** of each word.
 - Converting the hash to its **binary representation**.
 - Counting the number of **leading zero bits**.
@@ -1027,6 +1027,9 @@ To efficiently find words with the most leading zeroes, I used an English word d
 
 #### **Code Snippet:**
 ```python
+with open("words_alpha.txt") as file:
+    english_words = [line.strip() for line in file]
+
 word_hashes = {word: sha256_leading_zeros(word) for word in english_words}
 ```
 
@@ -1046,8 +1049,6 @@ max_zeros = max(word_hashes.values())
 best_words = [word for word, zeros in word_hashes.items() if zeros == max_zeros]
 ```
 
-### 4. Verifying Word Validity  
-It was important to ensure that the words with the highest number of leading zeroes were valid English words. To achieve this, the words were checked against the **NLTK word corpus** to confirm their validity.
 
 #### **Key Steps:**  
 - Used **NLTK's word corpus** to verify the validity of each word.
@@ -1078,7 +1079,7 @@ for word in best_words[:10]:  # Display first 10 words with most leading zeroes
 |----------------------------------|----------------------------------------------------|------------------------------------------------------|
 | **Goal**                         | Find a nonce that results in a hash with leading zeros. | Find words with the highest number of leading zero bits in their SHA-256 hash. |
 | **Method**                       | Generate random nonces and hash them to meet difficulty requirements. | Hash predefined English words and analyze their leading zero bits. |
-| **Dataset**                      | Random nonces generated on-the-fly.                | A fixed dataset of English words from the NLTK corpus. |
+| **Dataset**                      | Random nonces generated on-the-fly.                | A fixed dataset of English words from a .txt file. |
 | **Computational Expense**        | High, requires significant processing power (e.g., ASICs, GPUs). | Moderate, processes a predefined dataset of words. |
 | **Difficulty Regulation**        | Adjusted dynamically by the network.               | Not applicable, but involves computing hash properties of words. |
 | **Cryptographic Focus**          | Ensures network security via Proof-of-Work.        | Examines the randomness of hash functions and how certain words align with SHA-256. |
@@ -1096,7 +1097,7 @@ While both blockchain mining and this task use **SHA-256** hashes, the objective
 
 - **Edge cases** such as short words and repeated characters were handled appropriately.
 - **Performance** was good for processing a dictionary of words, but could be optimized further for larger datasets (e.g., by using parallel processing).
-- All **valid words** were correctly verified against the NLTK dictionary, ensuring real-world applicability of the results.
+- All words were loaded from a pre-cleaned local file, ensuring they were valid and usable without external verification.
 
 ---
 
@@ -1110,7 +1111,7 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 |-------------------------|--------------------------------------------------------------|------------|
 | **Basic Functionality**  | Ensured the SHA-256 hash function works and computes leading zero bits correctly for known words like "example" | ✅ Passed  |
 | **Edge Case Handling**   | Tested edge cases such as very short words ("a") and long words | ✅ Passed  |
-| **Dictionary Verification** | Verified that only valid words from the NLTK corpus are processed | ✅ Passed  |
+| **Dictionary Verification** | Verified that words were correctly loaded and stripped from the local file | ✅ Passed  |
 | **Performance**          | Measured time for processing the entire dataset of English words | ✅ Passed  |
 | **Correct Output**       | Checked if words with the most leading zeros were correctly displayed with their hashes | ✅ Passed  |
 
@@ -1133,7 +1134,6 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 | `sha256_leading_zeros`            | Schneier, B. (1996) - *Applied Cryptography*                   | To understand cryptographic hash functions and their properties (like pre-image resistance). |
 | `is_valid_word`                   | NLTK Docs - *NLTK Word Corpus*                                | To ensure that the words tested for leading zeros are valid English words.    |
 | `sha256_leading_zeros`            | Princeton University (2018) - *Cryptography and Cryptanalysis Lecture* | To understand the theoretical background of hash functions and their applications. |
-| `is_valid_word`                   | Python Docs - *String Methods*                                 | To verify that words are converted correctly and checked against the NLTK corpus. |
 | `sha256_leading_zeros`            | Nakamoto, S. (2008) - *Bitcoin: A Peer-to-Peer Electronic Cash System* | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
 
 ---
