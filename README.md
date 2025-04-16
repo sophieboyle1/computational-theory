@@ -1049,17 +1049,6 @@ max_zeros = max(word_hashes.values())
 best_words = [word for word, zeros in word_hashes.items() if zeros == max_zeros]
 ```
 
-
-#### **Key Steps:**  
-- Used **NLTK's word corpus** to verify the validity of each word.
-- Only **valid words** were considered for final output.
-
-#### **Code Snippet:**
-```python
-def is_valid_word(word):
-    return word.lower() in words.words()
-```
-
 ### 5. Displaying Results  
 Finally, I displayed the word(s) with the highest leading zero bits, including their corresponding **SHA-256 hash** and the number of leading zero bits.
 
@@ -1111,7 +1100,7 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 |-------------------------|--------------------------------------------------------------|------------|
 | **Basic Functionality**  | Ensured the SHA-256 hash function works and computes leading zero bits correctly for known words like "example" | ✅ Passed  |
 | **Edge Case Handling**   | Tested edge cases such as very short words ("a") and long words | ✅ Passed  |
-| **Dictionary Verification** | Verified that words were correctly loaded and stripped from the local file | ✅ Passed  |
+| **File Parsing** | Verified that words were correctly loaded and stripped from the local file | ✅ Passed  |
 | **Performance**          | Measured time for processing the entire dataset of English words | ✅ Passed  |
 | **Correct Output**       | Checked if words with the most leading zeros were correctly displayed with their hashes | ✅ Passed  |
 
@@ -1132,9 +1121,9 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 |-----------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------|
 | `sha256_leading_zeros`            | NIST (2015) - *Secure Hash Standard (SHA-256)*                 | To understand the SHA-256 hashing process and its standard specification.      |
 | `sha256_leading_zeros`            | Schneier, B. (1996) - *Applied Cryptography*                   | To understand cryptographic hash functions and their properties (like pre-image resistance). |
-| `is_valid_word`                   | NLTK Docs - *NLTK Word Corpus*                                | To ensure that the words tested for leading zeros are valid English words.    |
 | `sha256_leading_zeros`            | Princeton University (2018) - *Cryptography and Cryptanalysis Lecture* | To understand the theoretical background of hash functions and their applications. |
 | `sha256_leading_zeros`            | Nakamoto, S. (2008) - *Bitcoin: A Peer-to-Peer Electronic Cash System* | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
+| english_words.txt | [dwyl/english-words GitHub](https://github.com/dwyl/english-words) | Source of the plain text English word list. |
 
 ---
 
