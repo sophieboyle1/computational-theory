@@ -308,13 +308,15 @@ Hash functions play a crucial role in:
 
 ### **References**
 
-| **Function** | **Reference** | **Why It Was Used** |
-|--------------|---------------|----------------------|
-| `hash_function` | [Oracle Docs - Effective Java (Item 11: HashCode)](https://docs.oracle.com/en/java/) | To understand why prime numbers like 31 are commonly used in hashing. |
-|              | [Python Docs - Hashing](https://docs.python.org/3/library/hashlib.html) | To understand Python’s built-in hashing functions and techniques. |
-|              | [MIT OpenCourseWare - Hash Functions](https://openlearninglibrary.mit.edu/) | To explore the theoretical background of hash functions and their applications. |
-|              | [Princeton - Hashing Functions](https://algs4.cs.princeton.edu/34hash/) | To understand uniform distribution and how prime moduli improve hash distribution. |
-|              | [Python Docs - Modulo Operator](https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations) | To understand how Python’s modulo operation ensures hash values remain within range. |
+### **References**
+
+| **Function / Concept**          | **Reference** | **Why It Was Used** |
+|----------------------------------|---------------|----------------------|
+| `hash_function`                 | [Oracle Docs - Effective Java (Item 11: HashCode)](https://docs.oracle.com/en/java/) | To understand why prime numbers like 31 are commonly used in hash code generation. |
+| `hashlib.sha256()`             | [Python Docs - Hashing](https://docs.python.org/3/library/hashlib.html) | To understand how to generate SHA-256 hashes in Python. |
+| SHA-256 leading zero analysis  | [MIT OpenCourseWare - Hash Functions](https://openlearninglibrary.mit.edu/) | To explore the theory and behavior of cryptographic hash functions. |
+| Hash distribution concepts      | [Princeton - Hashing Functions](https://algs4.cs.princeton.edu/34hash/) | To understand uniform distribution and the role of primes in hash spread. |
+| `%` (Modulo operation)         | [Python Docs - Modulo Operator](https://docs.python.org/3/reference/expressions.html#binary-arithmetic-operations) | To explain how modulo keeps hash values in a desired range. |
 
 ---
 
@@ -716,13 +718,16 @@ To run them, simply **execute all cells** in the Jupyter Notebook.
 
 To ensure correctness, efficiency, and best practices, the following references were used in the implementation and analysis of prime number generation.
 
-| **Concept / Function**            | **Reference**                                    | **Why It Was Used** |
-|-----------------------------------|------------------------------------------------|----------------------|
-| **Trial Division Algorithm**      | MIT OpenCourseWare - Number Theory            | To understand basic prime checking methods. |
-| **Mathematical Primality Tests**  | Princeton - Algorithm Design Manual           | To compare different prime-checking techniques. |
-| **Sieve of Eratosthenes**         | Harvard Computational Number Theory Research  | To implement an optimized prime generation method. |
-| **Cryptographic Prime Numbers**   | NIST - Cryptographic Standards                | To understand prime number use in encryption. |
-| **Efficiency Analysis**           | Stanford Algorithms - Complexity Analysis     | To compare time complexity of different approaches. |
+### **References**
+
+| **Concept / Function**            | **Reference**                                                                 | **Why It Was Used** |
+|-----------------------------------|-------------------------------------------------------------------------------|----------------------|
+| **Trial Division Algorithm**      | [MIT OpenCourseWare - Number Theory](https://ocw.mit.edu/courses/mathematics/18-785-number-theory-i-fall-2021/) | To understand basic prime checking methods. |
+| **Mathematical Primality Tests**  | [Princeton - Algorithms Textbook](https://algs4.cs.princeton.edu/home/)     | To compare different prime-checking techniques. |
+| **Sieve of Eratosthenes**         | [Harvard - Computational Number Theory](https://people.seas.harvard.edu/~knill/teach/computationalnumbertheory2023/index.html) | To implement an optimized prime generation method. |
+| **Cryptographic Prime Numbers**   | [NIST - Cryptographic Standards (FIPS 186-4)](https://csrc.nist.gov/publications/detail/fips/186/4/final) | To understand prime number use in encryption. |
+| **Efficiency Analysis**           | [Stanford - Algorithm Complexity Lecture](https://web.stanford.edu/class/archive/cs/cs161/cs161.1168/lecture5.pdf) | To compare time complexity of different approaches. |
+
 
 ---
 
@@ -1117,13 +1122,15 @@ Testing ensures the correctness and efficiency of the implemented functions. Thi
 
 ## References
 
-| Function                          | Reference                                                      | Why It Was Used                                                                 |
-|-----------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------|
-| `sha256_leading_zeros`            | NIST (2015) - *Secure Hash Standard (SHA-256)*                 | To understand the SHA-256 hashing process and its standard specification.      |
-| `sha256_leading_zeros`            | Schneier, B. (1996) - *Applied Cryptography*                   | To understand cryptographic hash functions and their properties (like pre-image resistance). |
-| `sha256_leading_zeros`            | Princeton University (2018) - *Cryptography and Cryptanalysis Lecture* | To understand the theoretical background of hash functions and their applications. |
-| `sha256_leading_zeros`            | Nakamoto, S. (2008) - *Bitcoin: A Peer-to-Peer Electronic Cash System* | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
-| english_words.txt | [dwyl/english-words GitHub](https://github.com/dwyl/english-words) | Source of the plain text English word list. |
+### **References**
+
+| **Function**                      | **Reference**                                                                                                  | **Why It Was Used**                                                                 |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| `sha256_leading_zeros`           | [NIST (2015) - Secure Hash Standard (SHA-256)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)    | To understand the SHA-256 hashing process and its standard specification.           |
+| `sha256_leading_zeros`           | [Schneier, B. (1996) - Applied Cryptography](https://www.schneier.com/books/applied_cryptography/)           | To understand cryptographic hash functions and their properties like pre-image resistance. |
+| `sha256_leading_zeros`           | [Princeton - Cryptography and Cryptanalysis Lecture](https://www.cs.princeton.edu/courses/archive/spr18/cos433/) | To understand the theoretical background of hash functions and their applications.  |
+| `sha256_leading_zeros`           | [Nakamoto, S. (2008) - Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf)                                   | To understand the concept of Proof-of-Work and how hashes with leading zeros are used in blockchain systems. |
+| `english_words.txt`              | [dwyl/english-words GitHub](https://github.com/dwyl/english-words)                                           | Source of the plain text English word list.                                         |
 
 ---
 
@@ -1303,14 +1310,15 @@ print(result)  # Output: "101000"
 
 ## References
 
-| **Function / Concept**          | **Reference**                                                                                     | **Why It Was Used**                                                                 |
-|--------------------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| `turning_machine_add_one`      | [Stanford Encyclopedia of Philosophy – Turing Machines](https://plato.stanford.edu/entries/turing-machine/) | To understand the formal model of a Turing Machine and how it manipulates symbols.  |
-| `turning_machine_add_one`      | [MIT OpenCourseWare – Introduction to Turing Machines](https://ocw.mit.edu/)                     | For insights into how state transitions and tape operations simulate computation.    |
-| **Binary Incrementation Logic**| Abelson, H. & Sussman, G.J. (1996) – *Structure and Interpretation of Computer Programs*         | To explore binary arithmetic and carry propagation from a computational perspective. |
-| **Overflow & Tape Expansion**  | Sipser, M. (2012) – *Introduction to the Theory of Computation*                                   | To support understanding of infinite tape handling and formal computation rules.     |
-| **State Transitions & Testing**| [Python Documentation – `unittest`](https://docs.python.org/3/library/unittest.html)             | To structure automated tests and validate each scenario (e.g., overflow, edge cases).|
+### **References**
 
+| **Function / Concept**          | **Reference**                                                                                                    | **Why It Was Used**                                                                 |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| `turning_machine_add_one`      | [Stanford Encyclopedia of Philosophy – Turing Machines](https://plato.stanford.edu/entries/turing-machine/)      | To understand the formal model of a Turing Machine and how it manipulates symbols.  |
+| `turning_machine_add_one`      | [MIT OpenCourseWare – Introduction to Turing Machines](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/) | For insights into how state transitions and tape operations simulate computation.    |
+| **Binary Incrementation Logic**| [Structure and Interpretation of Computer Programs (Abelson & Sussman)](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html) | To explore binary arithmetic and carry propagation from a computational perspective. |
+| **Overflow & Tape Expansion**  | [Sipser, M. – Introduction to the Theory of Computation](https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X) | To support understanding of infinite tape handling and formal computation rules.     |
+| **State Transitions & Testing**| [Python Documentation – `unittest`](https://docs.python.org/3/library/unittest.html)                            | To structure automated tests and validate each scenario (e.g., overflow, edge cases).|
 
 
 ## Task 8: Computational Complexity
