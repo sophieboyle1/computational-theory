@@ -17,7 +17,6 @@ This repository contains solutions for the **Computational Theory** assessment. 
 10. [Task 7: Turing Machines](#task-7-turing-machines)  
 11. [Task 8: Computational Complexity](#task-8-computational-complexity) 
 12. [Final Thoughts & Conclusion](#final-thoughts--conclusion)
-13. [References](#references)
 
 **Each task is structured as follows:**  
 - **Overview**  
