@@ -39,3 +39,7 @@ coverage.xml
 *.rar
 *.7z
 *.bak
+
+# Ignore Extra Data Files (local word lists or test sets)
+words_alpha.txt
+test.txt
